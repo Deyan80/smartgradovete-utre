@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="bg" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Смартградовете утре — доц. д-р Георги Николов · Сфера на интелигентните градове</title>
+<meta name="description" content="Влез в 360° сфера на интелигентните градове: моделът N-SCIM, индексът N-Score и новата монография „Смартградовете утре“ на доц. д-р Георги Николов от УНСС.">
+<link rel="canonical" href="https://deyan80.github.io/smartgradovete-utre/">
+<meta name="theme-color" content="#040918">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Смартградовете утре · Сфера 360°">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Смартградовете утре — нова монография на доц. д-р Георги Николов (УНСС)">
+<meta property="og:description" content="Влез в 360° сфера на интелигентните градове: моделът N-SCIM, индексът N-Score и книгата, която показва как технологиите променят бъдещето на градовете.">
+<meta property="og:url" content="https://deyan80.github.io/smartgradovete-utre/">
+<meta property="og:image" content="https://deyan80.github.io/smartgradovete-utre/smartgradovete-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Доц. д-р Георги Николов със своята монография „Смартградовете утре“">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Смартградовете утре — доц. д-р Георги Николов (УНСС)">
+<meta name="twitter:description" content="Влез в 360° сфера на интелигентните градове: N-SCIM, N-Score и новата монография.">
+<meta name="twitter:image" content="https://deyan80.github.io/smartgradovete-utre/smartgradovete-share.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23040918' stroke='%2358d6ff' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='28' ry='10' fill='none' stroke='%2358d6ff' stroke-width='2'/%3E%3Cpath d='M18 44V30h6v14M27 44V22h7v22M37 44V28h6v16' fill='%23ffb15e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--acc:#58d6ff;--acc2:#ffb15e;--pale:#e6f6ff;--ink:#040918;--txt:#e9f3ff;--dim:rgba(233,243,255,.68);--glass:rgba(8,16,40,.62);--line:rgba(88,214,255,.45);--hov:rgba(88,214,255,.22);--lbbg:rgba(2,5,16,.95);--sheet:linear-gradient(180deg,#0a1538,#050b20);--ldbg:radial-gradient(circle at 50% 45%,#0b1d4d,#02040c 70%);--h1:linear-gradient(180deg,#ffffff,#8fe4ff 55%,#ffb15e);--disp:"Exo 2","Segoe UI",Roboto,Arial,sans-serif;--sans:Inter,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+[data-theme=light]{--acc:#0b7bbd;--acc2:#d86a12;--pale:#0b2a4a;--ink:#e9f4ff;--txt:#0b2a4a;--dim:rgba(11,42,74,.72);--glass:rgba(255,255,255,.78);--line:rgba(11,123,189,.5);--hov:rgba(11,123,189,.16);--lbbg:rgba(233,244,255,.96);--sheet:linear-gradient(180deg,#ffffff,#e6f2fd);--ldbg:radial-gradient(circle at 50% 45%,#ffffff,#cfe6fa 75%);--h1:linear-gradient(180deg,#0b2a4a,#0b7bbd 60%,#d86a12)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--ink);color:var(--txt);font-family:var(--sans);overflow:hidden;overscroll-behavior:none;transition:background .4s}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+#fx{pointer-events:none}
+#stage{position:fixed;inset:0;z-index:1;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+#stage.drag{cursor:grabbing}
+.off{display:none!important}
+button{font:inherit;color:inherit;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html[lang=bg] .l-en,html[lang=en] .l-bg{display:none}
+/* loader */
+#loader{position:fixed;inset:0;z-index:30;background:var(--ldbg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .9s}
+#loader.quick{transition:opacity .25s}
+#loader.gone{opacity:0;pointer-events:none}
+#loader p{margin:0;font:italic 500 20px var(--disp);letter-spacing:.08em;color:var(--pale)}
+.ld{width:84px;height:84px;border-radius:50%;border:1.5px solid var(--line);position:relative;animation:spin 3.2s linear infinite}
+.ld:before,.ld:after{content:"";position:absolute;border-radius:50%;inset:-1.5px;border:1.5px solid transparent;border-top-color:var(--acc)}
+.ld:after{inset:12px;border-top-color:var(--acc2);animation:spin 1.6s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* intro */
+#intro{position:fixed;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;padding:max(5vh,env(safe-area-inset-top)) 20px max(5vh,env(safe-area-inset-bottom));pointer-events:none;transition:opacity 1s}
+#intro.fade{opacity:0}
+#intro>*{pointer-events:auto}
+.eyebrow{font:500 12px var(--sans);letter-spacing:.34em;color:var(--acc);text-transform:uppercase;margin:0 0 12px;padding-left:.34em}
+#intro h1{margin:0;text-wrap:balance;font:700 clamp(34px,5vw,66px)/1.05 var(--disp);letter-spacing:.02em;background:var(--h1);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(88,214,255,.28))}
+[data-theme=light] #intro h1{filter:none}
+#intro .sub{margin:14px 0 0;font:italic 500 clamp(15px,2.2vw,22px)/1.35 var(--disp);color:var(--pale);opacity:.95}
+.cta{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 34px;border-radius:40px;border:1px solid var(--acc);background:linear-gradient(180deg,var(--hov),transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font:600 13px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--txt);box-shadow:0 0 34px rgba(88,214,255,.28),inset 0 0 18px rgba(88,214,255,.12);animation:pulse 2.8s ease-in-out infinite}
+.cta:hover{background:var(--hov)}
+@keyframes pulse{50%{box-shadow:0 0 54px rgba(88,214,255,.5),inset 0 0 22px rgba(88,214,255,.2)}}
+#intro .hint{margin:16px 0 0;font:300 12px var(--sans);letter-spacing:.12em;color:var(--dim)}
+@media (max-height:430px){#intro .sub,#intro .hint{display:none}}
+/* hud */
+#hud{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:0;transition:opacity 1.2s}
+#hud.on{opacity:1}
+#hud>*{pointer-events:auto}
+.brand{position:absolute;left:max(12px,env(safe-area-inset-left));top:max(12px,env(safe-area-inset-top));font:italic 600 18px var(--disp);letter-spacing:.03em;color:var(--pale);pointer-events:none!important;max-width:calc(100% - 150px);padding:7px 14px 8px;border-radius:16px;background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+[data-theme=dark] .brand{text-shadow:0 0 14px rgba(0,0,0,.85)}
+.brand small{display:block;font:500 9px var(--sans);letter-spacing:.28em;color:var(--acc);margin-top:3px}
+.tools{position:absolute;right:max(14px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top));display:flex;gap:9px}
+.ib{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:center;transition:background .25s,transform .25s;font:600 12px var(--sans);letter-spacing:.04em;color:var(--pale);padding:0}
+.ib:hover{background:var(--hov);transform:scale(1.06)}
+.ib svg{width:22px;height:22px;stroke:var(--pale);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ib.muted .wave{display:none}
+.ib:not(.muted) .slash{display:none}
+[data-theme=dark] .ico-moon{display:none}
+[data-theme=light] .ico-sun{display:none}
+.nav{position:absolute;left:0;right:0;bottom:max(14px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 10px}
+.tip{font:300 12px var(--sans);letter-spacing:.1em;color:var(--dim);transition:opacity 1.2s;text-align:center;padding:4px 12px;border-radius:20px;background:var(--glass)}
+.tip.gone{opacity:0}
+.chips{display:flex;gap:8px;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:4px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:40px;padding:0 17px;border-radius:30px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:500 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);transition:all .3s}
+.chip.act{background:var(--hov);border-color:var(--acc);color:var(--txt)}
+@media (max-width:620px){
+ .tools{flex-direction:column;gap:8px}
+ .ib{width:42px;height:42px}
+ .brand{font-size:15px;max-width:calc(100% - 84px);padding:6px 12px 7px}
+ .brand small{font-size:8px;letter-spacing:.2em}
+}
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:20;background:var(--lbbg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:max(56px,env(safe-area-inset-top)) 16px max(48px,env(safe-area-inset-bottom));touch-action:pan-y}
+#lb img{max-width:min(94vw,1000px);max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);object-fit:contain;border-radius:12px;box-shadow:0 0 60px rgba(88,214,255,.22),0 0 0 1px var(--line);transition:opacity .3s}
+#lb .cap{font:italic 500 clamp(16px,2.6vw,24px) var(--disp);color:var(--pale);text-align:center;min-height:1.4em}
+#lb .cnt{font:400 11px var(--sans);letter-spacing:.3em;color:var(--acc)}
+#lb .x,#lb .pv,#lb .nx{position:absolute}
+#lb .x{right:max(14px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top))}
+#lb .pv,#lb .nx{top:50%;margin-top:-23px}
+#lb .pv{left:max(10px,env(safe-area-inset-left))}#lb .nx{right:max(10px,env(safe-area-inset-right))}
+/* share */
+#share{position:fixed;inset:0;z-index:21;background:rgba(2,3,10,.55);display:flex;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+#share .sheet{width:min(520px,100%);background:var(--sheet);border:1px solid var(--line);border-bottom:0;border-radius:22px 22px 0 0;padding:22px 20px max(22px,env(safe-area-inset-bottom));animation:up .35s ease}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+#share h3{margin:0 0 4px;font:italic 600 24px var(--disp);color:var(--pale)}
+#share p{margin:0 0 16px;font:300 13px var(--sans);color:var(--dim)}
+.sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.sgrid button{min-height:48px;border-radius:14px;border:1px solid var(--line);background:var(--hov);font:500 13px var(--sans);letter-spacing:.06em;color:var(--txt)}
+.sgrid button:hover{background:var(--line)}
+#share .close{margin-top:12px;width:100%;min-height:44px;border-radius:14px;border:0;background:transparent;color:var(--dim);font:400 12px var(--sans);letter-spacing:.2em;text-transform:uppercase}
+#toast{position:fixed;left:50%;bottom:max(90px,env(safe-area-inset-bottom));transform:translate(-50%,20px);z-index:40;padding:12px 22px;border-radius:30px;background:var(--glass);color:var(--txt);border:1px solid var(--acc);font:400 13px var(--sans);opacity:0;pointer-events:none;transition:all .4s;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+#flash{position:fixed;inset:0;z-index:8;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 50%,#ffffff,#9fe6ff 45%,rgba(88,214,255,0) 80%)}
+.ripple{position:fixed;z-index:3;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;border:2px solid var(--acc);pointer-events:none;animation:rip .8s ease-out forwards}
+@keyframes rip{to{transform:scale(9);opacity:0}}
+/* fallback without WebGL */
+body.nogl{overflow:auto}
+body.nogl canvas,body.nogl #stage,body.nogl #intro,body.nogl #hud{display:none}
+body.nogl .sr{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;max-width:760px;margin:0 auto;padding:40px 20px;font:300 17px/1.7 var(--sans)}
+body.nogl .sr h1,body.nogl .sr h2{font-family:var(--disp);color:var(--acc)}
+body.nogl .sr img{width:100%;border-radius:12px;margin:12px 0}
+body.nogl .sr a{color:var(--acc)}
+body.nogl{overflow:auto;height:auto}
+@media (prefers-reduced-motion:reduce){.cta{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<canvas id="gl"></canvas>
+<canvas id="fx"></canvas>
+<div id="stage" aria-hidden="true"></div>
+<div id="flash"></div>
+
+<section id="intro" class="off" aria-label="Intro">
+  <div>
+    <p class="eyebrow" data-i="eyebrow"></p>
+    <h1><span data-i="t1"></span> <span data-i="t2"></span></h1>
+    <p class="sub" data-i="sub"></p>
+  </div>
+  <div>
+    <button class="cta" id="enter" type="button" data-i="enter"></button>
+    <p class="hint" data-i="hint"></p>
+  </div>
+</section>
+
+<div id="hud">
+  <div class="brand"><span data-i="brand"></span><small data-i="brandSmall"></small></div>
+  <div class="tools">
+    <button class="ib" id="bSnd" type="button" data-a="aSound"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="wave" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="slash" d="M17 9l5 6M22 9l-5 6"/></svg></button>
+    <button class="ib" id="bThm" type="button" data-a="aTheme"><svg class="ico-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><svg class="ico-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    <button class="ib" id="bLng" type="button" data-a="aLang"><span id="lngT">EN</span></button>
+    <button class="ib" id="bGal" type="button" data-a="aGal"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg></button>
+    <button class="ib" id="bShr" type="button" data-a="aShare"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="M8.3 10.8l7.4-3.6M8.3 13.2l7.4 3.6"/></svg></button>
+  </div>
+  <div class="nav">
+    <div class="tip" id="tip" data-i="tip"></div>
+    <div class="chips" id="chips">
+      <button class="chip" data-s="home" data-i="c_home" type="button"></button>
+      <button class="chip" data-s="book" data-i="c_book" type="button"></button>
+      <button class="chip" data-s="model" data-i="c_model" type="button"></button>
+      <button class="chip" data-s="stages" data-i="c_stages" type="button"></button>
+      <button class="chip" data-s="gallery" data-i="c_gallery" type="button"></button>
+      <button class="chip" data-s="author" data-i="c_author" type="button"></button>
+      <button class="chip" data-s="contacts" data-i="c_contacts" type="button"></button>
+    </div>
+  </div>
+</div>
+
+<div id="lb" class="off" role="dialog" aria-modal="true">
+  <button class="ib x" id="lbX" type="button" data-a="aClose"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <button class="ib pv" id="lbP" type="button" data-a="aPrev"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="ib nx" id="lbN" type="button" data-a="aNext"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <img id="lbI" alt="">
+  <div class="cap" id="lbC"></div>
+  <div class="cnt" id="lbK"></div>
+</div>
+
+<div id="share" class="off">
+  <div class="sheet">
+    <h3 data-i="shTitle"></h3>
+    <p data-i="shDesc"></p>
+    <div class="sgrid" id="sgrid"></div>
+    <button class="close" id="shX" type="button" data-i="close"></button>
+  </div>
+</div>
+
+<div id="loader"><div class="ld"></div><p id="ldT" data-i="loading"></p></div>
+<div id="toast"></div>
+
+<main class="sr" id="sr">
+  <h1><span class="l-bg">Смартградовете утре — доц. д-р Георги Николов (УНСС)</span><span class="l-en">Smart Cities of Tomorrow — Assoc. Prof. Georgi Nikolov (UNWE)</span></h1>
+  <div class="l-bg">
+    <h2>Моделът N-SCIM за развитие на интелигентни градове и регионални екосистеми</h2>
+    <p>Как ще изглеждат градовете на бъдещето? Могат ли изкуственият интелект, цифровите технологии и иновациите да направят градската среда по-добра, управлението по-ефективно, а живота на хората по-качествен? Тези въпроси са в основата на новата научна монография на доц. д-р Георги Николов, издадена от Академично издателство УНСС.</p>
+    <p>В центъра на изследването са два оригинални научни приноса на автора — Nikolov Smart City Integrated Model (N-SCIM) и интегрираният индекс N-Score. Монографията съчетава теоретичен анализ, международен опит и емпирично изследване сред 306 респонденти.</p>
+    <p>Основното послание: бъдещето на градовете не се определя единствено от технологиите, а от способността на обществото да ги превръща в по-добро управление, устойчиво развитие и по-високо качество на живот.</p>
+    <h2>За автора</h2>
+    <p>Доц. д-р Георги Николов е преподавател в Катедра „Регионално развитие“ на УНСС, заместник-декан по учебната работа на факултет „Управление и администрация“ и директор на Института за следдипломна квалификация. Научните му интереси са в областта на регионалното развитие, дигиталната трансформация на публичните политики, електронното управление и интелигентните градове.</p>
+  </div>
+  <div class="l-en">
+    <h2>The N-SCIM model for the development of smart cities and regional ecosystems</h2>
+    <p>What will the cities of the future look like? Can artificial intelligence, digital technologies and innovation make the urban environment better, governance more efficient and people's lives of higher quality? These questions are at the heart of the new scientific monograph by Assoc. Prof. Georgi Nikolov, published by UNWE Academic Publishing.</p>
+    <p>The study centres on two original scientific contributions of the author — the Nikolov Smart City Integrated Model (N-SCIM) and the integrated N-Score index. The monograph combines theoretical analysis, international experience and an empirical survey of 306 respondents.</p>
+    <p>The core message: the future of cities is not defined by technology alone, but by society's ability to turn it into better governance, sustainable development and a higher quality of life.</p>
+    <h2>About the author</h2>
+    <p>Assoc. Prof. Georgi Nikolov teaches at the Department of Regional Development at UNWE, is Deputy Dean for Academic Affairs of the Faculty of Management and Administration and Director of the Institute for Postgraduate Qualification. His research covers regional development, the digital transformation of public policies, e-government and smart cities.</p>
+  </div>
+  <img src="nikolov-cover.jpg" alt="Смартградовете утре / Smart Cities of Tomorrow" loading="lazy">
+  <img src="nikolov-audience.jpg" alt="Premiere / Премиера" loading="lazy">
+  <img src="nikolov-model.jpg" alt="N-SCIM" loading="lazy">
+  <p><a href="https://blogs.unwe.bg/gnikolov">blogs.unwe.bg/gnikolov</a> · <a href="mailto:gnikolov@unwe.bg">gnikolov@unwe.bg</a> · <a href="https://www.preprints.org/manuscript/202607.0700">N-SCIM (Preprints.org)</a></p>
+  <p>© 2026 · <span class="l-bg">Неофициален промоционален проект.</span><span class="l-en">Unofficial promotional project.</span></p>
+</main>
+<noscript><style>#loader{display:none}</style></noscript>
+
+<script>
+(()=>{
+'use strict';
+/* ================= helpers ================= */
+const $=s=>document.querySelector(s);
+const TAU=Math.PI*2,D2R=Math.PI/180;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const easeIO=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const smooth=(a,b,x)=>{const t=clamp((x-a)/(b-a),0,1);return t*t*(3-2*t)};
+const angDiff=(a,b)=>{let d=(b-a)%TAU;if(d>Math.PI)d-=TAU;if(d<-Math.PI)d+=TAU;return d};
+const mulberry=s=>()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const coarse=matchMedia('(pointer:coarse)').matches;
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const qp=new URLSearchParams(location.search);
+
+/* ================= preferences ================= */
+let LANG=qp.get('lang')||store.get('sc_lang')||((navigator.language||'bg').toLowerCase().startsWith('bg')?'bg':'en');
+if(LANG!=='bg'&&LANG!=='en')LANG='bg';
+let THEME=qp.get('theme')||store.get('sc_theme')||'dark';
+if(THEME!=='dark'&&THEME!=='light')THEME='dark';
+
+/* ================= content ================= */
+const SITE='https://deyan80.github.io/smartgradovete-utre/';
+const PHOTOS=[
+ {f:'nikolov-cover.jpg',   fx:.5, fy:.52,cap:{bg:'„Смартградовете утре“ · Академично издателство УНСС',en:'Smart Cities of Tomorrow · UNWE Academic Publishing'}},
+ {f:'nikolov-audience.jpg',fx:.5, fy:.4, cap:{bg:'Премиерата в Библиотеката на УНСС',en:'The premiere at the UNWE Library'}},
+ {f:'nikolov-model.jpg',   fx:.3, fy:.4, cap:{bg:'Моделът N-SCIM: етапи по пътя към интелигентен град',en:'N-SCIM: stages on the road to a smart city'}},
+ {f:'nikolov-en.jpg',      fx:.5, fy:.5, cap:{bg:'Smart Cities of Tomorrow — английското заглавие',en:'Smart Cities of Tomorrow — the English title'}},
+ {f:'nikolov-bg.jpg',      fx:.5, fy:.3, cap:{bg:'Доц. д-р Георги Николов със своята монография',en:'Assoc. Prof. Georgi Nikolov with his monograph'}},
+ {f:'nikolov-books.jpg',   fx:.5, fy:.5, cap:{bg:'Две корици — на български и на английски',en:'Two covers — in Bulgarian and English'}},
+ {f:'nikolov-pages.jpg',   fx:.5, fy:.4, cap:{bg:'Мигове от представянето на книгата',en:'Moments from the book presentation'}},
+ {f:'nikolov-rmf.jpg',     fx:.5, fy:.4, cap:{bg:'Модел RMF-SC: нива на регулаторна зрялост',en:'RMF-SC model: levels of regulatory maturity'}}
+];
+const BLOG='https://blogs.unwe.bg/gnikolov',PREPRINT='https://www.preprints.org/manuscript/202607.0700',MAIL='mailto:gnikolov@unwe.bg';
+
+const UI={
+ bg:{loading:'Зареждане на сферата…',eyebrow:'Сфера на интелигентните градове · 360°',t1:'Смартградовете',t2:'утре',sub:'Моделът N-SCIM · доц. д-р Георги Николов · УНСС',enter:'Влез в сферата',hint:'Влачи, за да завъртиш · звукът се включва при влизане',
+  brand:'Смартградовете утре',brandSmall:'СФЕРА НА ИНТЕЛИГЕНТНИТЕ ГРАДОВЕ',tip:'Влачи или докосвай · щипни за приближаване',
+  c_home:'Начало',c_book:'Книгата',c_model:'Моделът',c_stages:'Етапи',c_gallery:'Галерия',c_author:'Авторът',c_contacts:'Контакти',
+  shTitle:'Сподели сферата',shDesc:'Линкът се споделя със снимка и описание.',close:'Затвори',copy:'Копирай линка',more:'Още…',copied:'Линкът е копиран ✓',email:'Имейл',
+  aSound:'Звук включен/изключен',aTheme:'Светла/тъмна тема',aLang:'Език: български / English',aGal:'Галерия',aShare:'Сподели',aClose:'Затвори',aPrev:'Предишна',aNext:'Следваща',
+  title:'Смартградовете утре — доц. д-р Георги Николов · Сфера на интелигентните градове',
+  shareText:'„Смартградовете утре“ — нова монография на доц. д-р Георги Николов (УНСС). Влез в 360° сфера на интелигентните градове.'},
+ en:{loading:'Loading the sphere…',eyebrow:'Smart Cities Sphere · 360°',t1:'Smart Cities',t2:'of Tomorrow',sub:'The N-SCIM model · Assoc. Prof. Georgi Nikolov · UNWE',enter:'Enter the sphere',hint:'Drag to rotate · sound starts on entry',
+  brand:'Smart Cities of Tomorrow',brandSmall:'THE SMART CITIES SPHERE',tip:'Drag or tap · pinch to zoom',
+  c_home:'Start',c_book:'The book',c_model:'The model',c_stages:'Stages',c_gallery:'Gallery',c_author:'Author',c_contacts:'Contact',
+  shTitle:'Share the sphere',shDesc:'The link is shared with a photo and a description.',close:'Close',copy:'Copy link',more:'More…',copied:'Link copied ✓',email:'E-mail',
+  aSound:'Sound on/off',aTheme:'Light / dark theme',aLang:'Language: English / български',aGal:'Gallery',aShare:'Share',aClose:'Close',aPrev:'Previous',aNext:'Next',
+  title:'Smart Cities of Tomorrow — Assoc. Prof. Georgi Nikolov · The Smart Cities Sphere',
+  shareText:'“Smart Cities of Tomorrow” — the new monograph by Assoc. Prof. Georgi Nikolov (UNWE). Enter a 360° sphere of smart cities.'}
+};
+const COPY={
+ bg:{
+  heroEye:'МОНОГРАФИЯ · УНСС · 2026',t1:'СМАРТГРАДОВЕТЕ',t2:'УТРЕ',heroSub:'Моделът N-SCIM за развитие на интелигентни градове и регионални екосистеми',heroAuth:'доц. д-р Георги Николов',heroHint:'← ВЛАЧИ · ОТКРИЙ →',
+  msgLab:'ОСНОВНОТО ПОСЛАНИЕ',msg:'„Бъдещето на градовете не се определя единствено от технологиите, а от способността на обществото да ги превръща в по-добро управление, устойчиво развитие и по-високо качество на живот.“',
+  bookLab:'ЗА КНИГАТА',bookT:'Смартградовете утре',
+  bookP1:'Могат ли изкуственият интелект, цифровите технологии и иновациите да направят градската среда по-добра, а живота на хората — по-качествен? Монографията предлага съвременен научен поглед към цифровата трансформация, регионалната свързаност и новите модели на градско управление.',
+  bookP2:'В центъра са два авторски научни приноса — Nikolov Smart City Integrated Model (N-SCIM) и интегрираният индекс N-Score — за комплексно измерване на интелигентното развитие на градовете.',
+  stat:[['306','респонденти'],['6','измерения'],['8','етапа'],['5','нива RMF-SC']],
+  dimBan:'Шест измерения. Един екосистемен поглед.',
+  dimLab:'МОДЕЛЪТ',dimSub:'Nikolov Smart City Integrated Model',dimCenter:['КАЧЕСТВО','НА ЖИВОТ'],
+  dims:['Умно управление','Умна икономика','Умни хора','Умна околна среда','Умна мобилност и инфраструктура','Умни технологии и данни'],
+  dimFoot:'Резултат: качество на живот · устойчивост · адаптивност',dimSrc:'Nikolov, G. (2026) · Preprints.org',
+  preLab:'ПРЕМИЕРА',preT:'Университетска седмица на книгата',preS:'3 ноември 2026 · Библиотека на УНСС',
+  stBan:'Интелигентният град не е крайно състояние, а непрекъснат процес на усъвършенстване.',
+  stLab:'N-SCORE',stT:'Осем етапа към интелигентен град',
+  stages:['Дигитална инфраструктура','Дигитална трансформация на управлението','Иновации и предприемачество','Човешки капитал и умения','Качество на живот и публични услуги','Устойчивост, сигурност и доверие','Гражданско участие и съвместно управление','Интелигентна регионална екосистема'],
+  pts:['0–20','20–35','35–50','50–65','65–75','75–85','85–100','100'],stFoot:'Водеща интелигентна екосистема: N-Score > 85 точки',
+  auBan:'От научния модел — към политики за устойчиво градско и регионално развитие.',
+  auLab:'ЗА АВТОРА',auName:'Доц. д-р Георги Николов',auRole:'Катедра „Регионално развитие“, УНСС',auRole2:'Зам.-декан по учебната работа · Директор на Института за следдипломна квалификация',
+  auP:'Научни интереси: регионално и пространствено развитие, дигитална трансформация на публичните политики, електронно управление и интелигентни градове. Публикува в издания, индексирани в Scopus и Web of Science, вкл. Springer.',
+  pubLab:'ИЗБРАНИ ПУБЛИКАЦИИ',pubs:['Water Under Pressure · Springer, 2023','Intelligent Water Resources Management · Springer, 2022','Smart Tourism in the City Strategy · Skopje, 2022','Clasterization and Digitalization for the Development of Smart Cities · New York, 2019'],
+  coBan:'Повече за изследванията — в блога и научните публикации.',
+  coLab:'КОНТАКТИ',coT:'Научният свят на автора',coP:'Блог, научна статия за N-SCIM и пряка връзка с автора.',
+  btn:[['Университетски блог','blogs.unwe.bg/gnikolov ↗'],['Научна статия за N-SCIM','Preprints.org ↗'],['Имейл','gnikolov@unwe.bg']],
+  sign1:'Умни градове. По-добър живот.',sign2:'Нов научен модел за градове и региони · доц. д-р Георги Николов',sign3:'© 2026 · НЕОФИЦИАЛЕН ПРОМОЦИОНАЛЕН ПРОЕКТ · ДАННИ ОТ ПУБЛИЧНИ ИЗТОЧНИЦИ НА УНСС'},
+ en:{
+  heroEye:'MONOGRAPH · UNWE · 2026',t1:'SMART CITIES',t2:'OF TOMORROW',heroSub:'The N-SCIM model for the development of smart cities and regional ecosystems',heroAuth:'Assoc. Prof. Georgi Nikolov, PhD',heroHint:'← DRAG · EXPLORE →',
+  msgLab:'THE CORE MESSAGE',msg:'“The future of cities is not defined by technology alone, but by society’s ability to turn it into better governance, sustainable development and a higher quality of life.”',
+  bookLab:'ABOUT THE BOOK',bookT:'Smart Cities of Tomorrow',
+  bookP1:'Can artificial intelligence, digital technologies and innovation make the urban environment better and people’s lives of higher quality? The monograph offers a contemporary scientific view of digital transformation, regional connectivity and new models of city governance.',
+  bookP2:'At its centre are two original contributions of the author — the Nikolov Smart City Integrated Model (N-SCIM) and the integrated N-Score index — for the comprehensive measurement of smart urban development.',
+  stat:[['306','respondents'],['6','dimensions'],['8','stages'],['5','RMF-SC levels']],
+  dimBan:'Six dimensions. One ecosystem view.',
+  dimLab:'THE MODEL',dimSub:'Nikolov Smart City Integrated Model',dimCenter:['QUALITY','OF LIFE'],
+  dims:['Smart Governance','Smart Economy','Smart People','Smart Environment','Smart Mobility & Infrastructure','Smart Technologies & Data'],
+  dimFoot:'Outcomes: quality of life · sustainability · adaptability',dimSrc:'Nikolov, G. (2026) · Preprints.org',
+  preLab:'PREMIERE',preT:'University Book Week',preS:'November 3, 2026 · UNWE Library',
+  stBan:'The smart city is not an end state, but a continuous process of improvement.',
+  stLab:'N-SCORE',stT:'Eight stages to a smart city',
+  stages:['Digital infrastructure','Digital transformation of governance','Innovation and entrepreneurship','Human capital and skills','Quality of life and public services','Sustainability, security and trust','Civic participation and co-governance','Smart regional ecosystem'],
+  pts:['0–20','20–35','35–50','50–65','65–75','75–85','85–100','100'],stFoot:'Leading smart ecosystem: N-Score > 85 points',
+  auBan:'From a scientific model to policies for sustainable urban and regional development.',
+  auLab:'THE AUTHOR',auName:'Assoc. Prof. Georgi Nikolov, PhD',auRole:'Department of Regional Development, UNWE',auRole2:'Deputy Dean for Academic Affairs · Director, Institute for Postgraduate Qualification',
+  auP:'Research interests: regional and spatial development, digital transformation of public policies, e-government and smart cities. Published in Scopus- and Web of Science-indexed outlets, incl. Springer.',
+  pubLab:'SELECTED PUBLICATIONS',pubs:['Water Under Pressure · Springer, 2023','Intelligent Water Resources Management · Springer, 2022','Smart Tourism in the City Strategy · Skopje, 2022','Clasterization and Digitalization for the Development of Smart Cities · New York, 2019'],
+  coBan:'More about the research — in the blog and scientific papers.',
+  coLab:'CONTACT',coT:'The author’s research world',coP:'The blog, the N-SCIM research paper and a direct line to the author.',
+  btn:[['University blog','blogs.unwe.bg/gnikolov ↗'],['N-SCIM research paper','Preprints.org ↗'],['E-mail','gnikolov@unwe.bg']],
+  sign1:'Smart cities. A better life.',sign2:'A new scientific model for cities and regions · Assoc. Prof. Georgi Nikolov',sign3:'© 2026 · UNOFFICIAL PROMOTIONAL PROJECT · BASED ON PUBLIC UNWE SOURCES'}
+};
+const DISP='"Exo 2","Segoe UI",Roboto,Arial,sans-serif';
+const SANS='Inter,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+
+/* ================= themes ================= */
+const TH={
+ dark:{day:0,
+  sky:[[0,'#01040d'],[.35,'#06113a'],[.65,'#0c2a6b'],[.85,'#2a3f93'],[.95,'#b9607f'],[1,'#ff9b5e']],
+  introSky:['#01020a','#071033','#1b2252'],introGlowA:'rgba(120,90,220,.16)',introGlowB:'rgba(40,150,200,.15)',orb:['rgba(255,177,94,.2)','rgba(88,214,255,.09)','rgba(88,214,255,0)'],
+  acc:'#58d6ff',acc2:'#ffb15e',pale:'#e6f6ff',body:'rgba(226,238,255,.93)',dim:'rgba(226,238,255,.6)',
+  g0:'#ffffff',g1:'#7fe3ff',g2:'#ffb15e',
+  cardA:'rgba(8,20,52,.88)',cardB:'rgba(26,14,54,.88)',cardGlow:'rgba(88,214,255,.35)',inner:'rgba(88,214,255,.2)',photoGlow:'rgba(88,214,255,.5)',capShade:'rgba(2,4,14,.85)',
+  far:'#0c2160',mid:'#08153f',near:'#040b26',winC:['#7fe3ff','#ffd08a','#ffffff'],winP:[.16,.2,.26],
+  ground:[[0,'#16306a'],[.25,'#0a1a44'],[1,'#02040c']],refl:.46,
+  net:'120,210,255',trail:['255,170,90','120,225,255','255,255,255'],groundLine:'150,200,255',horizon:'255,170,110',
+  nodeCols:['#58d6ff','#4ade80','#ffb15e','#a78bfa','#ff8a5c','#5b8cff']},
+ light:{day:1,
+  sky:[[0,'#62b8f7'],[.4,'#a4d9ff'],[.75,'#dcf0ff'],[.93,'#fff1da'],[1,'#ffd4a0']],
+  introSky:['#8fcbf8','#cfe8fc','#fff2de'],introGlowA:'rgba(255,255,255,.5)',introGlowB:'rgba(255,214,150,.35)',orb:['rgba(255,255,255,.55)','rgba(120,190,255,.2)','rgba(120,190,255,0)'],
+  acc:'#0b7bbd',acc2:'#d86a12',pale:'#0b2a4a',body:'rgba(11,42,74,.92)',dim:'rgba(11,42,74,.62)',
+  g0:'#0b2a4a',g1:'#0b7bbd',g2:'#d86a12',
+  cardA:'rgba(255,255,255,.92)',cardB:'rgba(232,244,255,.92)',cardGlow:'rgba(11,123,189,.3)',inner:'rgba(11,123,189,.2)',photoGlow:'rgba(11,123,189,.4)',capShade:'rgba(6,28,56,.8)',
+  far:'#a9cdec',mid:'#86b2dc',near:'#5f8fc0',winC:['#ffffff','#fff2c8','#d8efff'],winP:[.2,.24,.3],
+  ground:[[0,'#d3e8f9'],[.25,'#b4d3ee'],[1,'#8fb6dc']],refl:.34,
+  net:'11,123,189',trail:['216,106,18','11,123,189','255,255,255'],groundLine:'11,100,170',horizon:'255,200,130',
+  nodeCols:['#0b7bbd','#1a9a56','#d86a12','#7c4ddb','#e0501f','#2b5cd9']}
+};
+let T=TH[THEME];
+
+/* ================= layout of the panorama (logical 4096x2048) ================= */
+const BAND_Y=600,BAND_H=620,HY=1280;
+const ITEMS=[['hero',520],['cover',380],['book',510],['dims',500],['mosA',300],['stages',470],['author',500],['mosB',300],['contacts',340]];
+const GAP=(4096-ITEMS.reduce((s,i)=>s+i[1],0))/ITEMS.length;
+const POS={};{let x=GAP/2;ITEMS.forEach(([k,w])=>{POS[k]={x,w};x+=w+GAP})}
+const cxOf=k=>POS[k].x+POS[k].w/2;
+const SECT={home:cxOf('hero'),book:(POS.cover.x+POS.book.x+POS.book.w)/2,model:cxOf('dims'),stages:cxOf('stages'),gallery:cxOf('mosA'),author:cxOf('author'),contacts:cxOf('contacts')};
+const toYaw=x=>x/4096*TAU;
+const ZONES=[];
+
+/* ================= panorama builder ================= */
+function buildPanorama(W,imgs,lang,T){
+  const S=W/4096,C=COPY[lang];
+  const cv=document.createElement('canvas');cv.width=W;cv.height=W/2;
+  const ctx=cv.getContext('2d');ctx.scale(S,S);
+  const mk=document.createElement('canvas');mk.width=1024;mk.height=512;
+  const mx=mk.getContext('2d');mx.scale(.25,.25);mx.fillStyle='#000';mx.fillRect(0,0,4096,2048);
+  const rnd=mulberry(20261103);
+  ZONES.length=0;
+  const mrect=(x,y,w,h,photo)=>{mx.fillStyle=photo?'#ffff00':'#ff0000';mx.fillRect(x-8,y-8,w+16,h+16)};
+  const rr=(x,y,w,h,r)=>{ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()};
+  const grad=(x0,y0,x1,y1)=>{const g=ctx.createLinearGradient(x0,y0,x1,y1);g.addColorStop(0,T.acc);g.addColorStop(1,T.acc2);return g};
+  const titleGrad=(x0,y0,x1,y1)=>{const g=ctx.createLinearGradient(x0,y0,x1,y1);g.addColorStop(0,T.g0);g.addColorStop(.5,T.g1);g.addColorStop(1,T.g2);return g};
+  const wrap=(t,w)=>{const ws=t.split(' ');const L=[];let c='';for(const wd of ws){const tt=c?c+' '+wd:wd;if(ctx.measureText(tt).width>w&&c){L.push(c);c=wd}else c=tt}if(c)L.push(c);return L};
+  const spaced=(t,x,y,sp,align)=>{let tot=0;const ws=[...t].map(ch=>{const m=ctx.measureText(ch).width;tot+=m+sp;return m});tot-=sp;let cx=align==='center'?x-tot/2:align==='right'?x-tot:x;[...t].forEach((ch,i)=>{ctx.fillText(ch,cx,y);cx+=ws[i]+sp});return tot};
+  const flow=(x,y,w,h,blocks,o={})=>{
+    const al=o.align||'left';
+    const lay=sc=>{let H=0;const out=[];for(const b of blocks){const px=b.size*sc;ctx.font=b.font(px);const lines=b.sp?[b.t]:wrap(b.t,w);const lh=px*(b.lh||1.4);out.push({b,px,lines,lh});H+=lines.length*lh+(b.after||0)*sc}return{out,H}};
+    let sc=1,L;for(;sc>=.4;sc-=.03){L=lay(sc);if(L.H<=h)break}
+    let cy=o.valign==='bottom'?y+h-L.H:y;
+    ctx.textBaseline='top';
+    for(const o2 of L.out){const b=o2.b;ctx.font=b.font(o2.px);ctx.fillStyle=b.color;
+      o2.lines.forEach((ln,i)=>{const yy=cy+i*o2.lh;
+        if(b.sp){ctx.fillStyle=b.color;spaced(ln,al==='center'?x+w/2:x,yy,b.sp*sc,al==='center'?'center':'left')}
+        else{const lw=ctx.measureText(ln).width;ctx.fillText(ln,al==='center'?x+(w-lw)/2:x,yy)}});
+      cy+=o2.lines.length*o2.lh+(b.after||0)*sc}
+    return L.H;
+  };
+  const lab=t=>({t,font:p=>`600 ${p}px ${SANS}`,size:16,color:T.acc,sp:4,after:12,lh:1.2});
+  const ttl=(t,s=38)=>({t,font:p=>`700 ${p}px ${DISP}`,size:s,color:T.pale,lh:1.1,after:14});
+  const par=(t,s=20,a=12)=>({t,font:p=>`400 ${p}px ${SANS}`,size:s,color:T.body,lh:1.5,after:a});
+  const cap=(t,s)=>({t,font:p=>`italic 500 ${p}px ${DISP}`,size:s,color:T.pale,lh:1.18,after:0});
+
+  /* ---------- sky ---------- */
+  let g=ctx.createLinearGradient(0,0,0,HY);
+  T.sky.forEach(([o,c])=>g.addColorStop(o,c));
+  ctx.fillStyle=g;ctx.fillRect(0,0,4096,HY+2);
+  // soft glows (bokeh)
+  for(let i=0;i<30;i++){const x=rnd()*4096,y=200+rnd()*900,r=40+rnd()*120;const hue=T.day?(rnd()<.5?'255,230,190':'255,255,255'):(rnd()<.5?'120,90,230':'60,170,255');
+    const rg=ctx.createRadialGradient(x,y,0,x,y,r);rg.addColorStop(0,`rgba(${hue},${T.day?.18:.07})`);rg.addColorStop(1,`rgba(${hue},0)`);ctx.fillStyle=rg;ctx.fillRect(x-r,y-r,r*2,r*2)}
+  if(T.day){ // sun + clouds
+    const sx=cxOf('book'),sy=300;let rg=ctx.createRadialGradient(sx,sy,10,sx,sy,330);rg.addColorStop(0,'rgba(255,248,220,.95)');rg.addColorStop(.25,'rgba(255,230,170,.45)');rg.addColorStop(1,'rgba(255,230,170,0)');ctx.fillStyle=rg;ctx.fillRect(sx-340,sy-340,680,680);
+    for(let i=0;i<26;i++){const x=rnd()*4096,y=120+rnd()*820,w=120+rnd()*260;ctx.save();ctx.translate(x,y);ctx.scale(1,.22);const cg=ctx.createRadialGradient(0,0,0,0,0,w);cg.addColorStop(0,'rgba(255,255,255,.55)');cg.addColorStop(1,'rgba(255,255,255,0)');ctx.fillStyle=cg;ctx.fillRect(-w,-w,w*2,w*2);ctx.restore()}
+  }else{ // stars + aurora
+    for(let i=0;i<20;i++){const x=i*4096/20+rnd()*80,y=380+120*Math.sin(x/4096*TAU*2)+(rnd()-.5)*160,r=140+rnd()*200;ctx.save();ctx.translate(x,y);ctx.scale(2.6,1);const rg=ctx.createRadialGradient(0,0,0,0,0,r);rg.addColorStop(0,'rgba(80,200,255,.06)');rg.addColorStop(.5,'rgba(150,100,255,.025)');rg.addColorStop(1,'rgba(80,200,255,0)');ctx.fillStyle=rg;ctx.fillRect(-r,-r,r*2,r*2);ctx.restore()}
+    for(let i=0;i<2600;i++){const sl=-.3+rnd()*1.3,lat=Math.asin(sl),x=rnd()*4096,y=2048*(.5-lat/Math.PI);if(y>HY-20)continue;
+      const cl=Math.max(Math.cos(lat),.16);let r=.5+rnd()*.8;const col=rnd()<.25?'255,226,190':rnd()<.5?'190,225,255':'255,255,255';
+      ctx.fillStyle=`rgba(${col},${.3+rnd()*.6})`;ctx.beginPath();ctx.ellipse(x,y,r/cl,r,0,0,TAU);ctx.fill()}
+  }
+  // horizon glow
+  g=ctx.createLinearGradient(0,HY-300,0,HY);g.addColorStop(0,`rgba(${T.horizon},0)`);g.addColorStop(1,`rgba(${T.horizon},${T.day?.45:.4})`);ctx.fillStyle=g;ctx.fillRect(0,HY-300,4096,302);
+  // network constellation
+  {const N=[];for(let i=0;i<150;i++)N.push({x:rnd()*4096,y:90+rnd()*430,r:1.4+rnd()*2.4});
+   ctx.lineWidth=1.4;
+   for(let i=0;i<N.length;i++)for(let j=i+1;j<N.length;j++){const a=N[i],b=N[j],d=Math.hypot(a.x-b.x,(a.y-b.y)*1.4);if(d<230){ctx.strokeStyle=`rgba(${T.net},${(1-d/230)*(T.day?.4:.42)})`;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}}
+   for(const n of N){const rg=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*5);rg.addColorStop(0,`rgba(${T.net},${T.day?.5:.6})`);rg.addColorStop(1,`rgba(${T.net},0)`);ctx.fillStyle=rg;ctx.fillRect(n.x-n.r*5,n.y-n.r*5,n.r*10,n.r*10);ctx.fillStyle=T.day?'#0b7bbd':'#eaffff';ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,TAU);ctx.fill()}}
+  /* skyline layers */
+  const skyline=(o)=>{const r=mulberry(o.seed);let x=-30;
+    while(x<4130){const w=o.wMin+r()*(o.wMax-o.wMin),h=o.hMin+Math.pow(r(),o.pw)*(o.hMax-o.hMin),y=HY-h;
+      ctx.fillStyle=o.col;ctx.fillRect(x,y,w,h+3);
+      if(h>o.hMax*.6&&r()<.5){ctx.fillRect(x+w*.48,y-24-r()*50,3,70);ctx.fillStyle=T.day?'#d86a12':'#ff5c5c';ctx.fillRect(x+w*.48-1,y-30-0,5,5);ctx.fillStyle=o.col}
+      if(o.win){const cw=8,chh=12,gx=7,gy=10,cols=Math.floor((w-10)/(cw+gx)),rows=Math.min(28,Math.floor((h-16)/(chh+gy)));
+        for(let i=0;i<cols;i++)for(let j=0;j<rows;j++)if(r()<o.wp){ctx.fillStyle=T.winC[(r()*T.winC.length)|0];ctx.globalAlpha=.3+r()*.65;ctx.fillRect(x+6+i*(cw+gx),y+10+j*(chh+gy),cw,chh)}
+        ctx.globalAlpha=1}
+      x+=w+r()*o.gap}};
+  skyline({seed:11,wMin:70,wMax:170,hMin:140,hMax:560,pw:1.4,col:T.far,win:true,wp:.1,gap:6});
+  skyline({seed:23,wMin:80,wMax:190,hMin:110,hMax:420,pw:1.6,col:T.mid,win:true,wp:T.winP[1],gap:10});
+  skyline({seed:37,wMin:90,wMax:210,hMin:60,hMax:230,pw:1.5,col:T.near,win:true,wp:T.winP[2],gap:18});
+  // ground
+  g=ctx.createLinearGradient(0,HY,0,2048);T.ground.forEach(([o,c])=>g.addColorStop(o,c));ctx.fillStyle=g;ctx.fillRect(0,HY,4096,2048-HY);
+  g=ctx.createLinearGradient(0,HY-30,0,HY+60);g.addColorStop(0,`rgba(${T.horizon},0)`);g.addColorStop(.35,`rgba(${T.horizon},.6)`);g.addColorStop(1,`rgba(${T.horizon},0)`);ctx.fillStyle=g;ctx.fillRect(0,HY-30,4096,90);
+  // perspective lines
+  for(let k=1;k<26;k++){const y=HY+4+Math.pow(k,1.75)*2.2;if(y>2040)break;ctx.fillStyle=`rgba(${T.groundLine},${Math.max(.03,.2-k*.007)})`;ctx.fillRect(0,y,4096,1.3)}
+  // light trails
+  for(let i=0;i<150;i++){const y=HY+8+Math.pow(rnd(),1.3)*80,x=rnd()*4096,len=60+rnd()*300,col=T.trail[(rnd()*T.trail.length)|0];const lg=ctx.createLinearGradient(x,0,x+len,0);lg.addColorStop(0,`rgba(${col},0)`);lg.addColorStop(.5,`rgba(${col},${.25+rnd()*.5})`);lg.addColorStop(1,`rgba(${col},0)`);ctx.fillStyle=lg;ctx.fillRect(x,y,len,1.5+rnd()*2.2)}
+
+  /* ---------- panel helpers ---------- */
+  const cover=(img,x,y,w,h,fx,fy)=>{const iw=img.naturalWidth,ih=img.naturalHeight;let sw,sh;if(iw/ih>w/h){sh=ih;sw=sh*w/h}else{sw=iw;sh=sw*h/w}
+    const sx=clamp(fx*iw-sw/2,0,iw-sw),sy=clamp(fy*ih-sh/2,0,ih-sh);ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h)};
+  const photo=(i,x,y,w,h,capPx,capText)=>{
+    const P=PHOTOS[i],img=imgs[i];
+    ctx.save();rr(x,y,w,h,14);ctx.shadowColor=T.photoGlow;ctx.shadowBlur=40;ctx.fillStyle=T.cardA;ctx.fill();ctx.restore();
+    ctx.save();rr(x,y,w,h,14);ctx.clip();
+    if(img)cover(img,x,y,w,h,P.fx,P.fy);else{ctx.fillStyle='#1a2350';ctx.fillRect(x,y,w,h)}
+    if(capText){const cg=ctx.createLinearGradient(0,y+h-110,0,y+h);cg.addColorStop(0,'rgba(2,4,14,0)');cg.addColorStop(1,T.capShade);ctx.fillStyle=cg;ctx.fillRect(x,y+h-110,w,110)}
+    ctx.restore();
+    if(capText){ctx.font=`italic 500 ${capPx}px ${DISP}`;ctx.fillStyle='#f2fbff';ctx.textBaseline='top';
+      const L=wrap(capText,w-30);const lh=capPx*1.15;L.forEach((ln,k)=>ctx.fillText(ln,x+16,y+h-14-(L.length-k)*lh))}
+    ctx.save();rr(x,y,w,h,14);ctx.lineWidth=2.6;ctx.strokeStyle=grad(x,y,x+w,y+h);ctx.stroke();ctx.restore();
+    mrect(x,y,w,h,true);ZONES.push({x,y,w,h,type:'photo',i});
+  };
+  const card=(x,y,w,h)=>{
+    ctx.save();rr(x,y,w,h,18);ctx.shadowColor=T.cardGlow;ctx.shadowBlur=36;
+    g=ctx.createLinearGradient(x,y,x+w,y+h);g.addColorStop(0,T.cardA);g.addColorStop(1,T.cardB);ctx.fillStyle=g;ctx.fill();ctx.restore();
+    ctx.save();rr(x,y,w,h,18);ctx.lineWidth=2;ctx.strokeStyle=grad(x,y,x+w,y+h);ctx.globalAlpha=.85;ctx.stroke();ctx.restore();
+    ctx.save();rr(x+8,y+8,w-16,h-16,12);ctx.lineWidth=1;ctx.strokeStyle=T.inner;ctx.stroke();ctx.restore();
+    mrect(x,y,w,h,false);
+  };
+  const diamond=(x,y,s)=>{ctx.save();ctx.translate(x,y);ctx.rotate(Math.PI/4);ctx.fillStyle=T.acc2;ctx.fillRect(-s/2,-s/2,s,s);ctx.restore()};
+  const circlePhoto=(i,cx,cy,R,fx,fy)=>{
+    ctx.save();ctx.shadowColor=T.photoGlow;ctx.shadowBlur=28;ctx.beginPath();ctx.arc(cx,cy,R+4,0,TAU);ctx.fillStyle=T.cardA;ctx.fill();ctx.restore();
+    ctx.save();ctx.beginPath();ctx.arc(cx,cy,R,0,TAU);ctx.clip();if(imgs[i])cover(imgs[i],cx-R,cy-R,R*2,R*2,fx,fy);ctx.restore();
+    ctx.lineWidth=3;ctx.strokeStyle=grad(cx-R,cy-R,cx+R,cy+R);ctx.beginPath();ctx.arc(cx,cy,R+4,0,TAU);ctx.stroke();
+    ZONES.push({x:cx-R,y:cy-R,w:R*2,h:R*2,type:'photo',i});mrect(cx-R,cy-R,R*2,R*2,true);
+  };
+
+  /* ---------- upper tier banners ---------- */
+  const banner=(xc,w,blocks)=>{
+    const h=210,x=xc-w/2;flow(x,360,w,h-20,blocks,{align:'center',valign:'bottom'});
+    ctx.fillStyle=T.acc;ctx.globalAlpha=.7;ctx.fillRect(xc-45,BAND_Y-18,90,1.5);ctx.globalAlpha=1;diamond(xc,BAND_Y-17,7);mrect(x,356,w,h,false);
+  };
+  banner(SECT.book,880,[lab(C.msgLab),{t:C.msg,font:p=>`italic 500 ${p}px ${DISP}`,size:34,color:T.pale,lh:1.18,after:0}]);
+  banner(cxOf('dims'),500,[cap(C.dimBan,38)]);
+  banner(cxOf('mosA'),420,[lab(C.preLab),{t:C.preT,font:p=>`700 ${p}px ${DISP}`,size:32,color:T.pale,lh:1.1,after:8},{t:C.preS,font:p=>`400 ${p}px ${SANS}`,size:19,color:T.body,lh:1.4,after:0}]);
+  banner(cxOf('stages'),470,[cap(C.stBan,30)]);
+  banner(cxOf('author'),500,[cap(C.auBan,32)]);
+  banner((POS.mosB.x+POS.contacts.x+POS.contacts.w)/2,660,[cap(C.coBan,36)]);
+
+  /* ---------- hero ---------- */
+  {
+    const x=POS.hero.x,w=POS.hero.w,cx=x+w/2;
+    ctx.textBaseline='alphabetic';
+    ctx.font=`600 15px ${SANS}`;ctx.fillStyle=T.acc;spaced(C.heroEye,cx,742,5,'center');
+    const fit=(t,maxW,start,spf)=>{let s=start;for(;s>30;s-=2){ctx.font=`700 ${s}px ${DISP}`;let tot=0;[...t].forEach(c=>tot+=ctx.measureText(c).width+s*spf);if(tot<=maxW)break}return s};
+    const s1=fit(C.t1,w-10,120,.03),s2=fit(C.t2,w-10,lang==='bg'?170:120,.03);
+    ctx.save();ctx.shadowColor=T.day?'rgba(255,255,255,.6)':'rgba(88,214,255,.5)';ctx.shadowBlur=30;
+    ctx.font=`700 ${s1}px ${DISP}`;ctx.fillStyle=titleGrad(x,780,x+w,860);spaced(C.t1,cx,730+s1*.95+30,s1*.03,'center');
+    const y2=730+s1*.95+30+s2*.92;
+    ctx.font=`700 ${s2}px ${DISP}`;ctx.fillStyle=(()=>{const gg=ctx.createLinearGradient(x,y2-s2,x+w,y2);gg.addColorStop(0,T.g2);gg.addColorStop(1,T.day?'#b04d08':'#ffd9a0');return gg})();spaced(C.t2,cx,y2,s2*.03,'center');ctx.restore();
+    const yl=y2+26;ctx.fillStyle=T.acc;ctx.globalAlpha=.8;ctx.fillRect(cx-70,yl,140,1.5);ctx.globalAlpha=1;diamond(cx,yl+.7,9);
+    ctx.textBaseline='top';
+    const hh=flow(x+10,yl+26,w-20,130,[{t:C.heroSub,font:p=>`italic 500 ${p}px ${DISP}`,size:26,color:T.pale,lh:1.25,after:0}],{align:'center'});
+    flow(x+10,yl+34+hh,w-20,60,[{t:C.heroAuth,font:p=>`600 ${p}px ${SANS}`,size:19,color:T.acc,lh:1.3,after:0}],{align:'center'});
+    ctx.textBaseline='alphabetic';ctx.font=`400 14px ${SANS}`;ctx.fillStyle=T.dim;spaced(C.heroHint,cx,1186,4,'center');
+    mrect(x,700,w,520,false);
+  }
+
+  /* ---------- photos in band ---------- */
+  const Y=BAND_Y,H=BAND_H,hh2=(H-18)/2;
+  photo(0,POS.cover.x,Y,POS.cover.w,H,24,PHOTOS[0].cap[lang]);
+  photo(1,POS.mosA.x,Y,POS.mosA.w,hh2,17,PHOTOS[1].cap[lang]);
+  photo(2,POS.mosA.x,Y+hh2+18,POS.mosA.w,hh2,17,PHOTOS[2].cap[lang]);
+  photo(3,POS.mosB.x,Y,POS.mosB.w,hh2,17,PHOTOS[3].cap[lang]);
+  photo(7,POS.mosB.x,Y+hh2+18,POS.mosB.w,hh2,17,PHOTOS[7].cap[lang]);
+
+  /* ---------- book card ---------- */
+  {
+    const x=POS.book.x,w=POS.book.w;card(x,Y,w,H);
+    flow(x+32,Y+30,w-64,H-60-110,[lab(C.bookLab),ttl(C.bookT,40),par(C.bookP1,20,12),par(C.bookP2,20,0)]);
+    const bw=(w-64-3*10)/4,by=Y+H-30-92;
+    C.stat.forEach((s,i)=>{const bx=x+32+i*(bw+10);
+      ctx.save();rr(bx,by,bw,92,12);ctx.fillStyle=T.day?'rgba(11,123,189,.08)':'rgba(88,214,255,.08)';ctx.fill();ctx.lineWidth=1.2;ctx.strokeStyle=T.inner;ctx.stroke();ctx.restore();
+      ctx.textBaseline='alphabetic';ctx.font=`700 36px ${DISP}`;ctx.fillStyle=T.nodeCols[i%6];const nw=ctx.measureText(s[0]).width;ctx.fillText(s[0],bx+(bw-nw)/2,by+44);
+      ctx.font=`400 13px ${SANS}`;ctx.fillStyle=T.body;let lw=ctx.measureText(s[1]).width;let fs=13;while(lw>bw-8&&fs>9){fs--;ctx.font=`400 ${fs}px ${SANS}`;lw=ctx.measureText(s[1]).width}ctx.fillText(s[1],bx+(bw-lw)/2,by+72)});
+  }
+
+  /* ---------- dims card (N-SCIM hexagon) ---------- */
+  {
+    const x=POS.dims.x,w=POS.dims.w;card(x,Y,w,H);
+    const th=flow(x+28,Y+26,w-56,110,[lab(C.dimLab),{t:'N-SCIM',font:p=>`700 ${p}px ${DISP}`,size:44,color:T.pale,lh:1.05,after:2},{t:C.dimSub,font:p=>`italic 500 ${p}px ${DISP}`,size:19,color:T.acc,lh:1.2,after:0}],{align:'center'});
+    const cx=x+w/2,cy=Y+228,R=84;
+    const pts=[0,1,2,3,4,5].map(k=>{const a=-Math.PI/2+k*Math.PI/3;return[cx+Math.cos(a)*R,cy+Math.sin(a)*R]});
+    ctx.lineWidth=1.6;ctx.strokeStyle=T.inner;ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();ctx.stroke();
+    ctx.strokeStyle=`rgba(${T.net},.35)`;pts.forEach(p=>{ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(p[0],p[1]);ctx.stroke()});
+    ctx.save();ctx.shadowColor=T.photoGlow;ctx.shadowBlur=22;ctx.beginPath();ctx.arc(cx,cy,44,0,TAU);g=ctx.createRadialGradient(cx,cy,4,cx,cy,44);g.addColorStop(0,T.day?'#ffffff':'#13306e');g.addColorStop(1,T.day?'#d6ecff':'#08183f');ctx.fillStyle=g;ctx.fill();ctx.lineWidth=2;ctx.strokeStyle=grad(cx-44,cy-44,cx+44,cy+44);ctx.stroke();ctx.restore();
+    ctx.textBaseline='alphabetic';ctx.fillStyle=T.pale;ctx.font=`700 11px ${SANS}`;C.dimCenter.forEach((t,i)=>{const tw=ctx.measureText(t).width;ctx.fillText(t,cx-tw/2,cy-2+i*14)});
+    pts.forEach((p,i)=>{ctx.save();ctx.shadowColor=T.nodeCols[i];ctx.shadowBlur=14;ctx.beginPath();ctx.arc(p[0],p[1],19,0,TAU);ctx.fillStyle=T.nodeCols[i];ctx.fill();ctx.restore();ctx.fillStyle='#fff';ctx.font=`700 19px ${DISP}`;const n=String(i+1),nw=ctx.measureText(n).width;ctx.fillText(n,p[0]-nw/2,p[1]+7)});
+    const ly=Y+352,rh=34;
+    C.dims.forEach((d,i)=>{const yy=ly+i*rh;ctx.beginPath();ctx.arc(x+44,yy+14,12,0,TAU);ctx.fillStyle=T.nodeCols[i];ctx.fill();ctx.fillStyle='#fff';ctx.font=`700 13px ${DISP}`;const n=String(i+1);ctx.fillText(n,x+44-ctx.measureText(n).width/2,yy+19);
+      ctx.fillStyle=T.body;let fs=19;ctx.font=`500 ${fs}px ${SANS}`;while(ctx.measureText(d).width>w-100&&fs>12){fs--;ctx.font=`500 ${fs}px ${SANS}`}ctx.fillText(d,x+68,yy+20)});
+    ctx.textBaseline='top';
+    flow(x+28,Y+H-56,w-56,40,[{t:C.dimFoot,font:p=>`italic 500 ${p}px ${DISP}`,size:15,color:T.acc,lh:1.2,after:0}],{align:'center'});
+  }
+
+  /* ---------- stages card ---------- */
+  {
+    const x=POS.stages.x,w=POS.stages.w;card(x,Y,w,H);
+    flow(x+28,Y+26,w-56,92,[lab(C.stLab),ttl(C.stT,30)],{align:'left'});
+    const ry=Y+112,rh=52;
+    C.stages.forEach((s,i)=>{const yy=ry+i*rh,col=T.nodeCols[i%6];
+      if(i<7){ctx.fillStyle=T.inner;ctx.fillRect(x+49,yy+34,2,rh-24)}
+      ctx.save();ctx.shadowColor=col;ctx.shadowBlur=10;ctx.beginPath();ctx.arc(x+50,yy+22,17,0,TAU);ctx.fillStyle=col;ctx.fill();ctx.restore();
+      ctx.textBaseline='alphabetic';ctx.fillStyle='#fff';ctx.font=`700 17px ${DISP}`;const n=String(i+1);ctx.fillText(n,x+50-ctx.measureText(n).width/2,yy+28);
+      ctx.fillStyle=T.body;let fs=17;ctx.font=`500 ${fs}px ${SANS}`;const maxw=w-80-100;const ls=wrap(s,maxw);
+      if(ls.length>2){fs=14;ctx.font=`500 ${fs}px ${SANS}`}const L2=wrap(s,maxw);
+      L2.slice(0,2).forEach((ln,k)=>ctx.fillText(ln,x+80,yy+(L2.length>1?17:27)+k*(fs+4)));
+      ctx.font=`700 15px ${DISP}`;ctx.fillStyle=col;const pt=C.pts[i];ctx.fillText(pt,x+w-28-ctx.measureText(pt).width,yy+28)});
+    ctx.textBaseline='top';
+    ctx.save();rr(x+24,Y+H-66,w-48,46,12);ctx.fillStyle=T.day?'rgba(216,106,18,.1)':'rgba(255,177,94,.1)';ctx.fill();ctx.lineWidth=1.2;ctx.strokeStyle=T.acc2;ctx.stroke();ctx.restore();
+    flow(x+34,Y+H-62,w-68,38,[{t:C.stFoot,font:p=>`600 ${p}px ${SANS}`,size:14.5,color:T.acc2,lh:1.25,after:0}],{align:'center',valign:'bottom'});
+  }
+
+  /* ---------- author card ---------- */
+  {
+    const x=POS.author.x,w=POS.author.w;card(x,Y,w,H);
+    circlePhoto(4,x+34+54,Y+34+60,54,.5,.3);
+    flow(x+34+54*2+18,Y+30,w-34-108-18-28,130,[lab(C.auLab),{t:C.auName,font:p=>`700 ${p}px ${DISP}`,size:27,color:T.pale,lh:1.1,after:0}]);
+    flow(x+32,Y+160,w-64,H-160-28,[
+      {t:C.auRole,font:p=>`600 ${p}px ${SANS}`,size:18,color:T.acc,lh:1.35,after:4},
+      par(C.auRole2,17,10),par(C.auP,17.5,12),
+      {t:C.pubLab,font:p=>`600 ${p}px ${SANS}`,size:13,color:T.acc2,sp:3,after:8,lh:1.2},
+      ...C.pubs.map(t=>({t:'▸ '+t,font:p=>`400 ${p}px ${SANS}`,size:16,color:T.body,lh:1.35,after:6}))]);
+  }
+
+  /* ---------- contacts card ---------- */
+  {
+    const x=POS.contacts.x,w=POS.contacts.w;card(x,Y,w,H);
+    circlePhoto(0,x+w/2,Y+100,64,.5,.76);
+    const th=flow(x+24,Y+186,w-48,150,[lab(C.coLab),ttl(C.coT,28)],{align:'center'});
+    flow(x+28,Y+186+th,w-56,90,[par(C.coP,16.5,0)],{align:'center'});
+    const urls=[BLOG,PREPRINT,MAIL];
+    const btn=(by,t1,t2,url)=>{const bx=x+24,bw=w-48,bh=68;ctx.save();rr(bx,by,bw,bh,34);g=ctx.createLinearGradient(bx,by,bx+bw,by+bh);g.addColorStop(0,T.day?'rgba(11,123,189,.16)':'rgba(88,214,255,.22)');g.addColorStop(1,T.day?'rgba(216,106,18,.08)':'rgba(255,177,94,.08)');ctx.fillStyle=g;ctx.fill();ctx.lineWidth=2;ctx.strokeStyle=T.acc;ctx.stroke();ctx.restore();
+      ctx.textBaseline='alphabetic';ctx.fillStyle=T.pale;let fs=19;ctx.font=`600 ${fs}px ${SANS}`;while(ctx.measureText(t1).width>bw-30&&fs>11){fs--;ctx.font=`600 ${fs}px ${SANS}`}ctx.fillText(t1,bx+(bw-ctx.measureText(t1).width)/2,by+30);
+      fs=15;ctx.font=`italic 500 ${fs}px ${DISP}`;while(ctx.measureText(t2).width>bw-30&&fs>10){fs--;ctx.font=`italic 500 ${fs}px ${DISP}`}ctx.fillStyle=T.acc;ctx.fillText(t2,bx+(bw-ctx.measureText(t2).width)/2,by+53);
+      ZONES.push({x:bx,y:by,w:bw,h:bh,type:'link',url})};
+    C.btn.forEach((b,i)=>btn(Y+H-3*80-12+i*80,b[0],b[1],urls[i]));
+  }
+
+  /* ---------- reflection on the ground ---------- */
+  {
+    const tmp=document.createElement('canvas');tmp.width=Math.round(W/2);tmp.height=350;
+    tmp.getContext('2d').drawImage(cv,0,(HY-700)*S,W,700*S,0,0,tmp.width,350);
+    for(let r=0;r<350;r++){const dy=HY+698-2*r;const a=T.refl*Math.pow(Math.max(0,1-(dy-HY)/740),1.5);if(a<.01)continue;
+      ctx.globalAlpha=a;const dx=Math.sin(dy*.05+r*.01)*(1+(dy-HY)*.008);ctx.drawImage(tmp,0,r,tmp.width,1,dx,dy,4096,2.3)}
+    ctx.globalAlpha=1;
+    for(let i=0;i<220;i++){const y=HY+14+Math.pow(rnd(),1.4)*680,x=rnd()*4096;ctx.fillStyle=`rgba(${T.groundLine},${.04+rnd()*.12})`;ctx.fillRect(x,y,8+rnd()*40,1.6)}
+  }
+  /* ---------- closing sign on the ground (wraps the seam) ---------- */
+  for(const sx of [0,4096]){
+    ctx.save();ctx.textBaseline='alphabetic';ctx.shadowColor=T.day?'rgba(255,255,255,.7)':'rgba(88,214,255,.55)';ctx.shadowBlur=30;
+    ctx.font=`700 96px ${DISP}`;ctx.fillStyle=titleGrad(sx-500,1560,sx+500,1680);const tw=ctx.measureText(C.sign1).width;ctx.fillText(C.sign1,sx-tw/2,1620);ctx.restore();
+    ctx.font=`italic 500 36px ${DISP}`;ctx.fillStyle=T.pale;ctx.fillText(C.sign2,sx-ctx.measureText(C.sign2).width/2,1690);
+    ctx.font=`400 15px ${SANS}`;ctx.fillStyle=T.dim;spaced(C.sign3,sx,1752,3,'center');
+  }
+  mrect(3500,1500,1100,300,false);mrect(-500,1500,1000,300,false);
+  return {cv,mk};
+}
+
+/* ================= GL ================= */
+const skyC=$('#sky'),glC=$('#gl'),fxC=$('#fx'),stage=$('#stage');
+let gl=null,prIn,prSh,uI={},uS={},idxCount=0,tex,maskTex;
+const LON=96,LAT=48;
+const VS=`attribute vec3 aPos;attribute vec2 aUv;uniform mat3 uV;uniform float uD;uniform vec2 uProj;uniform float uSc;varying vec2 vUv;varying vec3 vN;
+void main(){vec3 pc=uV*(aPos*uSc)-vec3(0.,0.,uD);float n=.02,f=40.;gl_Position=vec4(pc.x*uProj.x,pc.y*uProj.y,-(f+n)/(f-n)*pc.z-2.*f*n/(f-n),-pc.z);vUv=aUv;vN=aPos;}`;
+const FSI=`precision mediump float;uniform sampler2D uTex,uMask;uniform float uT,uDay;varying vec2 vUv;
+float h21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
+void main(){
+ vec3 c=texture2D(uTex,vUv).rgb;vec4 m=texture2D(uMask,vUv);
+ float gnd=step(.625,vUv.y);
+ vec2 g=vUv*vec2(230.,115.);vec2 id=floor(g);vec2 f=fract(g)-.5;float hh=h21(id);
+ float th=1.-(.05+.03*gnd)*sin(3.14159*vUv.y);
+ float on=step(th,hh);
+ float tw=.5+.5*sin(uT*(1.1+hh*2.4)+hh*70.);
+ vec2 off=(vec2(h21(id+7.1),h21(id+3.3))-.5)*.5;
+ float st=on*smoothstep(.24,.0,length(f-off))*tw*tw*(1.-m.r)*(1.-.55*gnd);
+ vec3 sc=mix(vec3(.6,.9,1.),vec3(1.,.82,.55),h21(id+1.7));
+ if(uDay<.5){c+=sc*st*1.2;}else{c=mix(c,vec3(1.),st*.55);}
+ float s=fract(vUv.x*2.+vUv.y*.5-uT*.03);float band=exp(-pow((s-.5)*8.,2.));
+ c+=m.g*band*vec3(.4,.8,1.)*(.18-.1*uDay);
+ float s2=fract(vUv.x*3.-uT*.05);float b2=exp(-pow((s2-.5)*16.,2.));
+ float yz=smoothstep(.45,.5,vUv.y)*(1.-smoothstep(.62,.66,vUv.y));
+ c+=(1.-m.r)*b2*yz*vec3(.25,.6,1.)*(.3-.22*uDay);
+ gl_FragColor=vec4(c,1.);}`;
+const FSS=`precision mediump float;uniform float uT,uOut,uDay;uniform vec3 uCam;varying vec2 vUv;varying vec3 vN;
+void main(){vec3 n=normalize(vN);vec3 v=normalize(uCam-vN);float ndv=abs(dot(n,v));float rim=pow(1.-ndv,2.4);
+ vec2 q=vUv*vec2(24.,12.);q=min(fract(q),1.-fract(q));float gl=1.-smoothstep(0.,.04,min(q.x,q.y));
+ float pulse=.5+.5*sin(vUv.x*48.-uT*1.6+vUv.y*10.);
+ vec3 col=mix(vec3(1.,.69,.37),vec3(.35,.84,1.),vUv.y);
+ if(uDay>.5)col=mix(vec3(.04,.4,.75),vec3(.1,.5,.85),vUv.y);
+ vec3 o=(rim*1.05+gl*.2*(.35+rim)*(.5+pulse))*col*uOut;
+ gl_FragColor=vec4(o,min(1.,max(o.r,max(o.g,o.b))));}`;
+function sh(t,src){const s=gl.createShader(t);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s}
+function prog(fs){const p=gl.createProgram();gl.attachShader(p,sh(gl.VERTEX_SHADER,VS));gl.attachShader(p,sh(gl.FRAGMENT_SHADER,fs));gl.bindAttribLocation(p,0,'aPos');gl.bindAttribLocation(p,1,'aUv');gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));return p}
+function locs(p,names){const o={};names.forEach(n=>o[n]=gl.getUniformLocation(p,n));return o}
+function initGL(){
+  gl=glC.getContext('webgl',{alpha:true,antialias:false,premultipliedAlpha:true,powerPreference:'high-performance'})||glC.getContext('experimental-webgl');
+  if(!gl)return false;
+  prIn=prog(FSI);prSh=prog(FSS);
+  uI=locs(prIn,['uV','uD','uProj','uSc','uTex','uMask','uT','uDay']);uS=locs(prSh,['uV','uD','uProj','uSc','uT','uOut','uCam','uDay']);
+  const verts=[];for(let j=0;j<=LAT;j++){const ph=j/LAT*Math.PI;for(let i=0;i<=LON;i++){const la=i/LON*TAU;verts.push(Math.sin(ph)*Math.sin(la),Math.cos(ph),-Math.sin(ph)*Math.cos(la),i/LON,j/LAT)}}
+  const idx=[];for(let j=0;j<LAT;j++)for(let i=0;i<LON;i++){const a=j*(LON+1)+i,b=a+1,c=a+LON+1,d=c+1;idx.push(a,b,c,b,d,c)}
+  idxCount=idx.length;
+  const vb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,vb);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(verts),gl.STATIC_DRAW);
+  const ib=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array(idx),gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);gl.vertexAttribPointer(0,3,gl.FLOAT,false,20,0);
+  gl.enableVertexAttribArray(1);gl.vertexAttribPointer(1,2,gl.FLOAT,false,20,12);
+  tex=gl.createTexture();maskTex=gl.createTexture();
+  gl.clearColor(0,0,0,0);gl.disable(gl.DEPTH_TEST);
+  return true;
+}
+function uploadPano(pano){
+  gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,tex);
+  gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,pano.cv);gl.generateMipmap(gl.TEXTURE_2D);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.REPEAT);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+  const ext=gl.getExtension('EXT_texture_filter_anisotropic');if(ext)gl.texParameterf(gl.TEXTURE_2D,ext.TEXTURE_MAX_ANISOTROPY_EXT,Math.min(4,gl.getParameter(ext.MAX_TEXTURE_MAX_ANISOTROPY_EXT)));
+  gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,maskTex);
+  gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,pano.mk);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.REPEAT);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+}
+
+/* ================= state ================= */
+const HERO_YAW=toYaw(SECT.home),HERO_PITCH=.155;
+const St={mode:'load',yaw:HERO_YAW,pitch:.12,fov:50*D2R,fovT:62*D2R,D:6,D0:6,vY:0,vP:0,t:0,dive:0,diveYaw0:0,idle:0,go:null,W:1,H:1,dpr:1,asp:1,lastPanel:-1,cool:0};
+const introFov=50*D2R;
+const baseFov=()=>(St.asp<1?88:65)*D2R;
+const skyCtx=skyC.getContext('2d'),fxCtx=fxC.getContext('2d');
+function resize(){
+  const W=innerWidth,H=innerHeight;St.W=W;St.H=H;St.asp=W/H;
+  St.dpr=Math.min(devicePixelRatio||1,coarse?1.75:2);
+  glC.width=Math.round(W*St.dpr);glC.height=Math.round(H*St.dpr);
+  const fd=Math.min(devicePixelRatio||1,1.5);
+  skyC.width=fxC.width=Math.round(W*fd);skyC.height=fxC.height=Math.round(H*fd);St.fd=fd;
+  const half=introFov/2,hh=Math.min(half,Math.atan(Math.tan(half)*St.asp));
+  St.D0=1/Math.sin(hh*(St.asp<1?.74:.5));
+  if(St.mode==='inside')St.fovT=clamp(St.fovT,34*D2R,100*D2R);
+  if(St.mode==='load'||St.mode==='intro')St.D=St.D0;
+}
+function viewMat(yaw,pitch){
+  const sy=Math.sin(yaw),cy=Math.cos(yaw),sp=Math.sin(pitch),cp=Math.cos(pitch);
+  const c0=[cy,0,sy],c1=[-sp*sy,cp,sp*cy],c2=[-cp*sy,-sp,cp*cy];
+  return {c0,c1,c2,m:new Float32Array([c0[0],c1[0],c2[0],c0[1],c1[1],c2[1],c0[2],c1[2],c2[2]])};
+}
+function draw(){
+  if(!gl)return;
+  gl.viewport(0,0,glC.width,glC.height);gl.clear(gl.COLOR_BUFFER_BIT);
+  const V=viewMat(St.yaw,St.pitch),th=Math.tan(St.fov/2);
+  gl.enable(gl.CULL_FACE);gl.disable(gl.BLEND);gl.cullFace(gl.FRONT);
+  gl.useProgram(prIn);gl.uniformMatrix3fv(uI.uV,false,V.m);gl.uniform1f(uI.uD,St.D);gl.uniform2f(uI.uProj,1/(St.asp*th),1/th);gl.uniform1f(uI.uSc,1);gl.uniform1f(uI.uT,St.t);gl.uniform1f(uI.uDay,T.day);
+  gl.uniform1i(uI.uTex,0);gl.uniform1i(uI.uMask,1);
+  gl.drawElements(gl.TRIANGLES,idxCount,gl.UNSIGNED_SHORT,0);
+  if(St.D>.9){
+    gl.enable(gl.BLEND);if(T.day)gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);else gl.blendFunc(gl.ONE,gl.ONE);gl.cullFace(gl.BACK);
+    gl.useProgram(prSh);gl.uniformMatrix3fv(uS.uV,false,V.m);gl.uniform1f(uS.uD,St.D);gl.uniform2f(uS.uProj,1/(St.asp*th),1/th);gl.uniform1f(uS.uSc,1.004);gl.uniform1f(uS.uT,St.t);gl.uniform1f(uS.uDay,T.day);
+    gl.uniform1f(uS.uOut,smooth(.95,1.7,St.D));gl.uniform3f(uS.uCam,V.c2[0]*St.D,V.c2[1]*St.D,V.c2[2]*St.D);
+    gl.drawElements(gl.TRIANGLES,idxCount,gl.UNSIGNED_SHORT,0);
+  }
+}
+
+/* ================= 2D sky + orbit rings (intro only) ================= */
+const rs=mulberry(77);
+const SKYSTARS=Array.from({length:coarse?90:150},()=>({x:rs(),y:rs(),r:rs()*1.1+.35,p:rs()*TAU,s:rs()*1.8+.6,w:rs()<.3}));
+const RINGS=[{k:1.5,tilt:-.34,ry:.2,sp:.32,n:coarse?46:64},{k:1.88,tilt:.24,ry:.28,sp:-.22,n:coarse?60:84},{k:2.3,tilt:-.1,ry:.12,sp:.14,n:coarse?30:44}];
+let shoot=null,nextShoot=2.5;
+function drawSky(dt){
+  const W=skyC.width,H=skyC.height,f=St.fd,c=skyCtx;
+  c.globalCompositeOperation='source-over';
+  let g=c.createLinearGradient(0,0,0,H);g.addColorStop(0,T.introSky[0]);g.addColorStop(.55,T.introSky[1]);g.addColorStop(1,T.introSky[2]);c.fillStyle=g;c.fillRect(0,0,W,H);
+  let rg=c.createRadialGradient(W*.8,H*.18,0,W*.8,H*.18,Math.max(W,H)*.5);rg.addColorStop(0,T.introGlowA);rg.addColorStop(1,'rgba(0,0,0,0)');c.fillStyle=rg;c.fillRect(0,0,W,H);
+  rg=c.createRadialGradient(W*.15,H*.85,0,W*.15,H*.85,Math.max(W,H)*.45);rg.addColorStop(0,T.introGlowB);rg.addColorStop(1,'rgba(0,0,0,0)');c.fillStyle=rg;c.fillRect(0,0,W,H);
+  if(!T.day){
+    for(const s of SKYSTARS){const a=.35+.65*(.5+.5*Math.sin(St.t*s.s+s.p));c.fillStyle=s.w?`rgba(255,226,190,${a})`:`rgba(210,225,255,${a})`;c.fillRect(s.x*W,s.y*H,s.r*f*1.4,s.r*f*1.4)}
+    nextShoot-=dt;if(nextShoot<0&&!shoot){shoot={x:rs()*W*.7+W*.1,y:rs()*H*.35,l:0};nextShoot=3+rs()*5}
+    if(shoot){shoot.l+=dt*1.7;const L=shoot.l,x=shoot.x+L*W*.35,y=shoot.y+L*H*.2;const gg=c.createLinearGradient(x,y,x-W*.09,y-H*.05);gg.addColorStop(0,`rgba(200,240,255,${1-L})`);gg.addColorStop(1,'rgba(200,240,255,0)');c.strokeStyle=gg;c.lineWidth=1.8*f;c.beginPath();c.moveTo(x,y);c.lineTo(x-W*.09,y-H*.05);c.stroke();if(L>1)shoot=null}
+  }else{
+    for(const s of SKYSTARS){const a=.12+.2*(.5+.5*Math.sin(St.t*s.s*.5+s.p));c.fillStyle=`rgba(255,255,255,${a*2})`;c.beginPath();c.arc(s.x*W,s.y*H,s.r*f*2.2,0,TAU);c.fill()}
+  }
+  const cx=W/2,cy=H/2,rp=Math.tan(Math.asin(Math.min(.999,1/St.D)))/Math.tan(St.fov/2)*H/2;
+  rg=c.createRadialGradient(cx,cy,rp*.9,cx,cy,rp*2.2);rg.addColorStop(0,T.orb[0]);rg.addColorStop(.5,T.orb[1]);rg.addColorStop(1,T.orb[2]);c.fillStyle=rg;c.fillRect(0,0,W,H);
+  ringPass(c,cx,cy,rp,false,f);
+}
+function ringPass(c,cx,cy,rp,front,f){
+  c.globalCompositeOperation=T.day?'source-over':'lighter';
+  for(const r of RINGS){const R=rp*r.k,ct=Math.cos(r.tilt),st=Math.sin(r.tilt);
+    for(let j=0;j<r.n;j++){const th=j/r.n*TAU+St.t*r.sp;const sn=Math.sin(th);if((sn>0)!==front)continue;
+      const x0=Math.cos(th)*R,y0=sn*R*r.ry;const x=cx+x0*ct-y0*st,y=cy+x0*st+y0*ct;
+      const tw=.5+.5*Math.sin(St.t*2+j*1.7);const a=(.3+.7*tw)*(front?1:.6);const sz=(.7+tw*1.1)*f;
+      const A=T.day?(j%3?'216,106,18':'11,123,189'):(j%3?'255,190,120':'110,215,255');
+      c.fillStyle=`rgba(${A},${.16*a})`;c.beginPath();c.arc(x,y,sz*2.6,0,TAU);c.fill();
+      c.fillStyle=T.day?`rgba(${A},${a})`:`rgba(240,252,255,${a})`;c.beginPath();c.arc(x,y,sz,0,TAU);c.fill()}}
+  c.globalCompositeOperation='source-over';
+}
+function drawFx(){
+  const W=fxC.width,H=fxC.height;fxCtx.clearRect(0,0,W,H);
+  const cx=W/2,cy=H/2,rp=Math.tan(Math.asin(Math.min(.999,1/St.D)))/Math.tan(St.fov/2)*H/2;
+  ringPass(fxCtx,cx,cy,rp,true,St.fd);
+}
+
+/* ================= audio ================= */
+const Aud={ctx:null,m:null,send:null,pf:null,oscs:[],ok:false,on:true,ci:0,timers:[],white:null,noise:null,
+ CH:[[110,164.8,261.6,392,493.9],[87.3,130.8,220,329.6,440],[130.8,196,329.6,392,587.3],[98,146.8,246.9,392,493.9]],
+ SC:[880,987.8,1174.7,1318.5,1568,1760,2093],
+ init(){
+  if(this.ctx){if(this.ctx.state==='suspended')this.ctx.resume();return}
+  const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+  const c=this.ctx=new AC();this.ok=true;
+  const comp=c.createDynamicsCompressor();comp.threshold.value=-20;comp.ratio.value=4;comp.connect(c.destination);
+  const m=this.m=c.createGain();m.gain.value=0;m.connect(comp);
+  const dl=c.createDelay(1.5);dl.delayTime.value=.38;const fb=c.createGain();fb.gain.value=.32;const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=2600;
+  dl.connect(lp);lp.connect(fb);fb.connect(dl);lp.connect(m);const send=this.send=c.createGain();send.gain.value=.5;send.connect(dl);
+  const pf=this.pf=c.createBiquadFilter();pf.type='lowpass';pf.frequency.value=720;pf.Q.value=.5;
+  const pg=c.createGain();pg.gain.value=.12;pf.connect(pg);pg.connect(m);const ps=c.createGain();ps.gain.value=.22;pg.connect(ps);ps.connect(send);
+  this.CH[0].forEach((f,i)=>{const o=c.createOscillator();o.type=i%2?'triangle':'sine';o.frequency.value=f;o.detune.value=(i-2)*5;const g=c.createGain();g.gain.value=.24-i*.025;o.connect(g);g.connect(pf);o.start();this.oscs.push(o)});
+  const lfo=c.createOscillator();lfo.frequency.value=.06;const lg=c.createGain();lg.gain.value=260;lfo.connect(lg);lg.connect(pf.frequency);lfo.start();
+  const n=c.sampleRate*3,nb=c.createBuffer(1,n,c.sampleRate),d=nb.getChannelData(0);let l=0;for(let i=0;i<n;i++){l=(l+.02*(Math.random()*2-1))/1.02;d[i]=l*3.6}
+  this.noise=nb;const wb=c.createBuffer(1,c.sampleRate*2,c.sampleRate),wd=wb.getChannelData(0);for(let i=0;i<wd.length;i++)wd[i]=Math.random()*2-1;this.white=wb;
+  const ns=c.createBufferSource();ns.buffer=nb;ns.loop=true;const nf=c.createBiquadFilter();nf.type='lowpass';nf.frequency.value=380;const wg=c.createGain();wg.gain.value=.025;ns.connect(nf);nf.connect(wg);wg.connect(m);ns.start();
+  m.gain.setTargetAtTime(this.on?.6:0,c.currentTime,1.4);
+  this.loopChord();this.loopChime();
+ },
+ loopChord(){this.timers.push(setTimeout(()=>{if(!this.ctx)return;this.ci=(this.ci+1)%this.CH.length;const ch=this.CH[this.ci];this.oscs.forEach((o,i)=>o.frequency.setTargetAtTime(ch[i],this.ctx.currentTime,2.6));this.loopChord()},11000))},
+ loopChime(){this.timers.push(setTimeout(()=>{if(this.ctx&&this.ctx.state==='running'&&St.mode!=='load')this.chime(this.SC[Math.floor(Math.random()*5)],.06+Math.random()*.04);this.loopChime()},(coarse?3200:2200)+Math.random()*3000))},
+ chime(f,v=.12,when=0,dur=2.6){
+  if(!this.ok||this.ctx.state!=='running')return;const c=this.ctx,t=c.currentTime+when;
+  const o=c.createOscillator(),o2=c.createOscillator(),g=c.createGain(),g2=c.createGain();o.type='sine';o2.type='triangle';o.frequency.value=f;o2.frequency.value=f*3.01;g2.gain.value=.12;
+  o.connect(g);o2.connect(g2);g2.connect(g);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+  let out=g;if(c.createStereoPanner){const p=c.createStereoPanner();p.pan.value=Math.random()*1.2-.6;g.connect(p);out=p}
+  out.connect(this.m);out.connect(this.send);o.start(t);o2.start(t);o.stop(t+dur+.1);o2.stop(t+dur+.1);
+ },
+ whoosh(){
+  if(!this.ok)return;const c=this.ctx,t=c.currentTime;const s=c.createBufferSource();s.buffer=this.white;s.loop=true;
+  const bp=c.createBiquadFilter();bp.type='bandpass';bp.Q.value=1.3;bp.frequency.setValueAtTime(180,t);bp.frequency.exponentialRampToValueAtTime(3400,t+2.3);
+  const g=c.createGain();g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.26,t+1.5);g.gain.exponentialRampToValueAtTime(.0001,t+3.2);
+  s.connect(bp);bp.connect(g);g.connect(this.m);g.connect(this.send);s.start(t);s.stop(t+3.3);
+  [440,659.3,880,1318.5,1760].forEach((f,i)=>this.chime(f,.1,2.1+i*.16,3.6));
+ },
+ tap(i){this.chime(this.SC[i%this.SC.length],.14,0,2.2)},
+ motion(v){if(!this.ok)return;this.pf.frequency.setTargetAtTime(720+clamp(v,0,1)*1400,this.ctx.currentTime,.25)},
+ toggle(){this.on=!this.on;if(this.ok)this.m.gain.setTargetAtTime(this.on?.6:0,this.ctx.currentTime,.25);return this.on},
+ pause(){if(this.ctx)this.ctx.suspend()},resume(){if(this.ctx&&this.on)this.ctx.resume()}
+};
+
+/* ================= interaction ================= */
+const ptrs=new Map();let pinch0=null,tapInfo=null,lastMove=0;
+function rayHit(px,py){
+  const th=Math.tan(St.fov/2);const x=(px/St.W*2-1)*th*St.asp,y=(1-py/St.H*2)*th;
+  const V=viewMat(St.yaw,St.pitch);
+  const d=[V.c0[0]*x+V.c1[0]*y-V.c2[0],V.c0[1]*x+V.c1[1]*y-V.c2[1],V.c0[2]*x+V.c1[2]*y-V.c2[2]];
+  const L=Math.hypot(...d);const lam=Math.atan2(d[0],-d[2]);const ph=Math.acos(clamp(d[1]/L,-1,1));
+  const X=((lam/TAU)%1+1)%1*4096,Y=ph/Math.PI*2048;
+  for(let i=ZONES.length-1;i>=0;i--){const z=ZONES[i];if(X>=z.x&&X<=z.x+z.w&&Y>=z.y&&Y<=z.y+z.h)return z}
+  return null;
+}
+stage.addEventListener('pointerdown',e=>{
+  stage.setPointerCapture(e.pointerId);ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(ptrs.size===1){tapInfo={x:e.clientX,y:e.clientY,t:performance.now(),moved:0};St.vY=St.vP=0;St.go=null;stage.classList.add('drag')}
+  else if(ptrs.size===2){const [a,b]=[...ptrs.values()];pinch0={d:Math.hypot(a.x-b.x,a.y-b.y),f:St.fovT};tapInfo=null}
+  St.idle=0;
+});
+stage.addEventListener('pointermove',e=>{
+  const p=ptrs.get(e.pointerId);
+  if(!p){if(St.mode==='inside'&&e.pointerType==='mouse'){const z=rayHit(e.clientX,e.clientY);stage.style.cursor=z?'pointer':''}return}
+  const dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;St.idle=0;
+  if(ptrs.size===2&&pinch0&&St.mode==='inside'){const [a,b]=[...ptrs.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);St.fovT=clamp(pinch0.f*pinch0.d/Math.max(d,1),34*D2R,100*D2R);return}
+  if(St.mode==='dive')return;
+  if(tapInfo)tapInfo.moved+=Math.abs(dx)+Math.abs(dy);
+  const k=St.mode==='inside'?St.fov/St.H:.0065;const now=performance.now(),dt=Math.max(.008,(now-lastMove)/1000);lastMove=now;
+  St.yaw-=dx*k;St.pitch=clamp(St.pitch+dy*k,-1.4,1.4);
+  St.vY=lerp(St.vY,-dx*k/dt,.4);St.vP=lerp(St.vP,dy*k/dt,.4);
+});
+const up=e=>{
+  const had=ptrs.delete(e.pointerId);if(!had)return;
+  if(ptrs.size<2)pinch0=null;
+  if(ptrs.size===0){stage.classList.remove('drag');
+    if(tapInfo&&tapInfo.moved<10&&performance.now()-tapInfo.t<700&&St.mode==='inside')tap(tapInfo.x,tapInfo.y);
+    if(performance.now()-lastMove>90){St.vY=St.vP=0}
+    tapInfo=null}
+};
+stage.addEventListener('pointerup',up);stage.addEventListener('pointercancel',up);
+stage.addEventListener('wheel',e=>{e.preventDefault();if(St.mode==='inside')St.fovT=clamp(St.fovT+e.deltaY*.0006,34*D2R,100*D2R);else if(St.mode==='intro')St.D0=clamp(St.D0+e.deltaY*.004,2.2,9)},{passive:false});
+function ripple(x,y){const r=document.createElement('span');r.className='ripple';r.style.left=x+'px';r.style.top=y+'px';document.body.appendChild(r);setTimeout(()=>r.remove(),850)}
+function tap(x,y){
+  const z=rayHit(x,y);ripple(x,y);
+  if(!z){Aud.chime(Aud.SC[Math.floor(Math.random()*5)],.07);return}
+  if(z.type==='photo'){Aud.tap(z.i);openLB(z.i)}
+  else if(z.type==='link'){Aud.tap(2);if(z.url.startsWith('mailto:'))location.href=z.url;else window.open(z.url,'_blank','noopener')}
+}
+addEventListener('keydown',e=>{
+  if(!$('#lb').classList.contains('off')){if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')stepLB(1);if(e.key==='ArrowLeft')stepLB(-1);return}
+  if(!$('#share').classList.contains('off')){if(e.key==='Escape')$('#share').classList.add('off');return}
+  if(St.mode==='intro'&&(e.key==='Enter'||e.key===' ')){e.preventDefault();enter();return}
+  if(St.mode!=='inside')return;St.idle=0;St.go=null;
+  if(e.key==='ArrowLeft')St.vY=-.9;if(e.key==='ArrowRight')St.vY=.9;if(e.key==='ArrowUp')St.vP=.7;if(e.key==='ArrowDown')St.vP=-.7;
+  if(e.key==='+'||e.key==='=')St.fovT=clamp(St.fovT-.08,34*D2R,100*D2R);if(e.key==='-')St.fovT=clamp(St.fovT+.08,34*D2R,100*D2R);
+});
+
+/* ================= flow control ================= */
+function enter(){
+  if(St.mode!=='intro')return;
+  Aud.init();Aud.whoosh();
+  St.mode='dive';St.dive=0;St.diveYaw0=St.yaw;
+  $('#intro').classList.add('fade');setTimeout(()=>$('#intro').classList.add('off'),1000);
+  St.vY=St.vP=0;
+}
+function gotoSection(key){
+  if(St.mode!=='inside')return;const ty=toYaw((St.asp<1&&key==='book')?cxOf('book'):SECT[key]);
+  St.go={t:0,dur:1.4,y0:St.yaw,y1:St.yaw+angDiff(St.yaw,ty),p0:St.pitch,p1:HERO_PITCH+.02,f0:St.fovT,f1:baseFov()};St.vY=St.vP=0;
+}
+function panelAt(yaw){const X=((yaw/TAU)%1+1)%1*4096;let best=0,bd=1e9;ITEMS.forEach(([k],i)=>{const d=Math.abs(X-cxOf(k));if(d<bd){bd=d;best=i}});return best}
+function sectionAt(yaw){const X=((yaw/TAU)%1+1)%1*4096;let best='home',bd=1e9;for(const k in SECT){let d=Math.abs(X-SECT[k]);d=Math.min(d,4096-d);if(d<bd){bd=d;best=k}}return best}
+
+let last=0,chipT=0,perfN=0,perfS=0,perfDone=false;
+function frame(ts){
+  requestAnimationFrame(frame);
+  if(document.hidden||!gl||St.mode==='load'){last=ts;return}
+  if(lbOpen){last=ts;return}
+  const dt=Math.min(.05,(ts-last)/1000||.016);last=ts;St.t+=dt;
+  if(St.mode==='intro'){
+    if(!ptrs.size){St.yaw+=dt*(reduce?.03:.16);St.pitch=lerp(St.pitch,.14+.08*Math.sin(St.t*.35),.02)}
+    St.yaw+=St.vY*dt;St.pitch=clamp(St.pitch+St.vP*dt,-1.2,1.2);const dmp=Math.exp(-dt*3);St.vY*=dmp;St.vP*=dmp;
+    St.D=lerp(St.D,St.D0,.08);St.fov=introFov;
+  }else if(St.mode==='dive'){
+    St.dive+=dt/(reduce?1.3:3.1);const t=clamp(St.dive,0,1),e=easeIO(t);
+    St.D=St.D0*(1-e);St.fov=lerp(introFov,baseFov(),e);
+    const tgt=St.diveYaw0+angDiff(St.diveYaw0,HERO_YAW)+(reduce?0:TAU);St.yaw=lerp(St.diveYaw0,tgt,e);St.pitch=lerp(St.pitch,HERO_PITCH+.02,.04+.1*e);
+    $('#flash').style.opacity=(.8*Math.exp(-Math.pow((St.D-1)/.35,2))).toFixed(3);
+    const so=smooth(.9,2.2,St.D);skyC.style.opacity=so;fxC.style.opacity=so;
+    if(t>=1){St.mode='inside';St.D=0;St.fov=baseFov();St.fovT=baseFov();skyC.classList.add('off');fxC.classList.add('off');$('#flash').style.opacity=0;$('#hud').classList.add('on');St.idle=0;setTimeout(()=>$('#tip').classList.add('gone'),9000)}
+  }else{
+    if(St.go){const g=St.go;g.t+=dt/g.dur;const e=easeIO(clamp(g.t,0,1));St.yaw=lerp(g.y0,g.y1,e);St.pitch=lerp(g.p0,g.p1,e);St.fovT=lerp(g.f0,g.f1,e);if(g.t>=1)St.go=null}
+    else{
+      if(!ptrs.size){St.yaw+=St.vY*dt;St.pitch=clamp(St.pitch+St.vP*dt,-1.35,1.35);const dmp=Math.exp(-dt*3.4);St.vY*=dmp;St.vP*=dmp;St.idle+=dt;
+        if(St.idle>3.5&&!reduce){const a=smooth(3.5,6,St.idle);St.yaw+=dt*.05*a;St.pitch=lerp(St.pitch,HERO_PITCH,.006)}}
+    }
+    St.fov=lerp(St.fov,St.fovT,.12);
+    Aud.motion(Math.abs(St.vY)*.9+(ptrs.size?.2:0));
+    St.cool-=dt;const pa=panelAt(St.yaw);if(pa!==St.lastPanel){if(St.lastPanel>=0&&St.cool<=0){Aud.chime(Aud.SC[pa%Aud.SC.length],.06,0,2.2);St.cool=.7}St.lastPanel=pa}
+    chipT-=dt;if(chipT<0){chipT=.25;const s=sectionAt(St.yaw);document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('act',c.dataset.s===s))}
+  }
+  draw();
+  if(St.mode==='intro'||(St.mode==="dive"&&St.D>1.05)){drawSky(dt);drawFx()}
+  if(!perfDone&&St.mode==='inside'){perfS+=dt;perfN++;if(perfN===120){const avg=perfS/perfN;if(avg>.026&&St.dpr>1){St.dpr=1;glC.width=Math.round(St.W);glC.height=Math.round(St.H)}perfDone=true}}
+}
+
+/* ================= lightbox ================= */
+let lbOpen=false,lbI=0;
+const lbEl=$('#lb'),lbImg=$('#lbI');
+function showLB(){const P=PHOTOS[lbI];lbImg.style.opacity=0;lbImg.onload=()=>{lbImg.style.opacity=1};lbImg.src=P.f;lbImg.alt=P.cap[LANG];$('#lbC').textContent=P.cap[LANG];$('#lbK').textContent=(lbI+1)+' / '+PHOTOS.length;if(lbImg.complete)lbImg.style.opacity=1;
+  [1,-1].forEach(d=>{const im=new Image();im.src=PHOTOS[(lbI+d+PHOTOS.length)%PHOTOS.length].f})}
+function openLB(i){lbI=i;lbOpen=true;lbEl.classList.remove('off');showLB()}
+function closeLB(){lbOpen=false;lbEl.classList.add('off')}
+function stepLB(d){lbI=(lbI+d+PHOTOS.length)%PHOTOS.length;showLB()}
+$('#lbX').onclick=closeLB;$('#lbP').onclick=()=>stepLB(-1);$('#lbN').onclick=()=>stepLB(1);
+lbEl.addEventListener('click',e=>{if(e.target===lbEl)closeLB()});
+{let sx=null;lbEl.addEventListener('pointerdown',e=>{sx=e.clientX});lbEl.addEventListener('pointerup',e=>{if(sx==null)return;const d=e.clientX-sx;sx=null;if(Math.abs(d)>55)stepLB(d<0?1:-1)})}
+
+/* ================= share ================= */
+function pageUrl(){const o=location.origin;return (o&&o!=='null'&&location.protocol.startsWith('http'))?o+location.pathname:SITE}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2200)}
+function buildShare(){
+  const U=UI[LANG],u=encodeURIComponent(pageUrl()),tx=encodeURIComponent(U.shareText);
+  const L=[['Facebook',`https://www.facebook.com/sharer/sharer.php?u=${u}`],['WhatsApp',`https://wa.me/?text=${tx}%20${u}`],['Viber',`viber://forward?text=${tx}%20${u}`],['Telegram',`https://t.me/share/url?url=${u}&text=${tx}`],['X (Twitter)',`https://twitter.com/intent/tweet?url=${u}&text=${tx}`],['LinkedIn',`https://www.linkedin.com/sharing/share-offsite/?url=${u}`],[U.email,`mailto:?subject=${encodeURIComponent(U.brand)}&body=${tx}%20${u}`]];
+  const grid=$('#sgrid');grid.innerHTML='';
+  L.forEach(([n,h])=>{const b=document.createElement('button');b.type='button';b.textContent=n;b.onclick=()=>{if(h.startsWith('http'))window.open(h,'_blank','noopener,width=640,height=560');else location.href=h};grid.appendChild(b)});
+  const cp=document.createElement('button');cp.type='button';cp.textContent=U.copy;cp.onclick=async()=>{try{await navigator.clipboard.writeText(pageUrl())}catch(_){const t=document.createElement('textarea');t.value=pageUrl();document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(__){}t.remove()}toast(U.copied)};grid.appendChild(cp);
+  if(navigator.share){const nb=document.createElement('button');nb.type='button';nb.textContent=U.more;nb.onclick=()=>navigator.share({title:U.brand,text:U.shareText,url:pageUrl()}).catch(()=>{});grid.appendChild(nb)}
+}
+$('#bShr').onclick=()=>{buildShare();$('#share').classList.remove('off')};
+$('#shX').onclick=()=>$('#share').classList.add('off');
+$('#share').addEventListener('click',e=>{if(e.target.id==='share')$('#share').classList.add('off')});
+$('#bGal').onclick=()=>openLB(0);
+$('#bSnd').onclick=()=>{Aud.init();const on=Aud.toggle();$('#bSnd').classList.toggle('muted',!on)};
+$('#enter').onclick=enter;
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{gotoSection(c.dataset.s);Aud.chime(Aud.SC[2],.07)});
+document.addEventListener('visibilitychange',()=>{document.hidden?Aud.pause():Aud.resume()});
+addEventListener('resize',resize);
+
+/* ================= language / theme ================= */
+let W_TEX=4096,IMGS=[],ready=false,busy=false;
+function applyText(){
+  const U=UI[LANG];
+  document.documentElement.lang=LANG;document.title=U.title;
+  document.querySelectorAll('[data-i]').forEach(e=>{e.textContent=U[e.dataset.i]});
+  document.querySelectorAll('[data-a]').forEach(e=>e.setAttribute('aria-label',U[e.dataset.a]));
+  $('#lngT').textContent=LANG==='bg'?'EN':'BG';
+  $('#lb').setAttribute('aria-label',U.aGal);
+  if(!lbEl.classList.contains('off'))showLB();
+  if(!$('#share').classList.contains('off'))buildShare();
+}
+function applyTheme(){
+  T=TH[THEME];document.documentElement.dataset.theme=THEME;
+  const m=document.querySelector('meta[name=theme-color]');if(m)m.content=T.day?'#e9f4ff':'#040918';
+}
+function rebuildPano(){
+  if(!ready||busy)return;busy=true;
+  const ld=$('#loader');ld.classList.add('quick');ld.classList.remove('gone');
+  setTimeout(()=>{
+    try{const p=buildPanorama(W_TEX,IMGS,LANG,T);uploadPano(p);p.cv.width=p.cv.height=1}catch(e){console.warn(e)}
+    ld.classList.add('gone');busy=false;
+  },60);
+}
+$('#bLng').onclick=()=>{LANG=LANG==='bg'?'en':'bg';store.set('sc_lang',LANG);applyText();rebuildPano()};
+$('#bThm').onclick=()=>{THEME=THEME==='dark'?'light':'dark';store.set('sc_theme',THEME);applyTheme();rebuildPano()};
+
+/* ================= boot ================= */
+async function boot(){
+  applyTheme();applyText();
+  try{
+    const ldT=$('#ldT');
+    if(document.fonts&&document.fonts.load){
+      const tests=['700 40px "Exo 2"','italic 500 40px "Exo 2"','400 22px Inter','500 22px Inter','600 22px Inter'];
+      await Promise.race([Promise.all(tests.map(t=>document.fonts.load(t,'Смартградовете Smart Cities абв'))),new Promise(r=>setTimeout(r,3500))]);
+    }
+    let done=0;
+    IMGS=await Promise.all(PHOTOS.map(p=>new Promise(res=>{const im=new Image();im.decoding='async';im.onload=()=>{done++;ldT.textContent=UI[LANG].loading.replace('…','')+' '+Math.round(done/PHOTOS.length*100)+'%';res(im)};im.onerror=()=>res(null);im.src=p.f})));
+    await new Promise(r=>setTimeout(r,30));
+    const test=document.createElement('canvas').getContext('webgl')||document.createElement('canvas').getContext('experimental-webgl');
+    if(!test)throw new Error('nogl');
+    const maxT=test.getParameter(test.MAX_TEXTURE_SIZE);
+    W_TEX=maxT>=4096?4096:2048;
+    if(!initGL())throw new Error('nogl');
+    const pano=buildPanorama(W_TEX,IMGS,LANG,T);uploadPano(pano);pano.cv.width=pano.cv.height=1;
+    resize();
+    St.mode='intro';ready=true;
+    $('#intro').classList.remove('off');
+    $('#loader').classList.add('gone');
+    glC.addEventListener('webglcontextlost',e=>{e.preventDefault()});
+    glC.addEventListener('webglcontextrestored',()=>{initGL();const p=buildPanorama(W_TEX,IMGS,LANG,T);uploadPano(p);p.cv.width=p.cv.height=1});
+    requestAnimationFrame(frame);
+  }catch(err){
+    console.warn(err);document.body.classList.add('nogl');const l=$('#loader');if(l)l.remove();
+  }
+}
+window.__sphere={St,hit:rayHit,ZONES,enter,go:gotoSection,set:(y,p,f)=>{St.yaw=y*D2R;St.pitch=p*D2R;if(f){St.fov=St.fovT=f*D2R}}};
+boot();
+})();
+</script>
+</body>
+</html>
